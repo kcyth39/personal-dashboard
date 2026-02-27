@@ -30,30 +30,22 @@ function App() {
       </header>
 
       {/* Main Grid Layout */}
-      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 auto-rows-min">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-6 items-start">
 
-        {/* News Section (Large) */}
-        <div className="md:col-span-8 md:row-span-2 min-h-[400px]">
+        {/* Left Column: News & Market */}
+        <div className="md:col-span-8 h-full">
           <NewsCard />
         </div>
 
-        {/* Weather Section */}
-        <div className="md:col-span-4 min-h-[200px]">
+        {/* Right Column: Weather, Calendar, Links */}
+        <div className="md:col-span-4 flex flex-col gap-4">
           <WeatherCard />
-        </div>
-
-        {/* Calendar Section */}
-        <div className="md:col-span-4 min-h-[250px]">
           <CalendarCard />
-        </div>
-
-        {/* Links Section */}
-        <div className="md:col-span-4 min-h-[200px]">
           <LinksCard />
         </div>
 
-        {/* Tips Section (Full width on smaller, takes remaining space on large) */}
-        <div className="md:col-span-12 min-h-[150px] mt-4">
+        {/* Tips Section (Bottom) */}
+        <div className="md:col-span-12 mt-4">
           <TipsCard />
         </div>
 
