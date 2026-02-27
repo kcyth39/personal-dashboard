@@ -48,43 +48,45 @@ export default function WeatherCard() {
     const weather = getWeatherInfo(data.current.weatherCode);
 
     return (
-        <div className={`glass-panel p-6 rounded-2xl flex flex-col h-full overflow-hidden bg-gradient-to-br ${weather.color}`}>
-            <div className="flex items-center justify-between mb-2">
-                <span className="text-sm font-bold text-gray-500 dark:text-gray-400 flex items-center">
-                    <span className="w-2 h-2 bg-emerald-500 rounded-full mr-2"></span>
+        <div className={`glass-panel p-4 rounded-xl flex flex-col overflow-hidden bg-gradient-to-br ${weather.color}`}>
+            <div className="flex items-center justify-between mb-3">
+                <span className="text-xs font-bold text-gray-500 dark:text-gray-400 flex items-center">
+                    <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full mr-2"></span>
                     {locationName}
                 </span>
-                <span className="text-[10px] text-gray-400 font-medium">
+                <span className="text-[9px] text-gray-400 font-medium">
                     {new Date(data.lastUpdated).toLocaleTimeString('ja-JP', { hour: '2-digit', minute: '2-digit' })} 更新
                 </span>
             </div>
 
-            <div className="flex items-center justify-between mt-auto">
-                <div className="flex items-center space-x-4">
-                    <div className="text-5xl">
+            <div className="flex items-center justify-between">
+                <div className="flex items-center space-x-3">
+                    <div className="text-4xl">
                         {weather.icon}
                     </div>
                     <div>
-                        <div className="text-4xl font-black tracking-tighter leading-none">
+                        <div className="text-3xl font-black tracking-tighter leading-none">
                             {Math.round(data.current.temp)}°
                         </div>
-                        <div className="text-xs font-bold text-gray-500 dark:text-gray-400 mt-1">
+                        <div className="text-[10px] font-bold text-gray-500 dark:text-gray-400 mt-1">
                             {weather.label}
                         </div>
                     </div>
                 </div>
 
-                <div className="text-right space-y-1">
-                    <div className="flex items-center justify-end text-rose-500 font-black text-sm">
-                        <FaArrowUp className="text-[10px] mr-1" />
-                        {Math.round(data.daily.tempMax)}°
+                <div className="text-right flex items-center space-x-3">
+                    <div className="space-y-0.5">
+                        <div className="flex items-center justify-end text-rose-500 font-black text-xs leading-none">
+                            <FaArrowUp className="text-[8px] mr-1" />
+                            {Math.round(data.daily.tempMax)}°
+                        </div>
+                        <div className="flex items-center justify-end text-blue-500 font-black text-xs leading-none">
+                            <FaArrowDown className="text-[8px] mr-1" />
+                            {Math.round(data.daily.tempMin)}°
+                        </div>
                     </div>
-                    <div className="flex items-center justify-end text-blue-500 font-black text-sm">
-                        <FaArrowDown className="text-[10px] mr-1" />
-                        {Math.round(data.daily.tempMin)}°
-                    </div>
-                    <div className="text-[10px] text-gray-400 font-bold mt-2">
-                        湿度 {data.current.humidity}%
+                    <div className="text-[9px] text-gray-400 font-bold border-l border-gray-300 dark:border-gray-700 pl-3">
+                        湿度<br />{data.current.humidity}%
                     </div>
                 </div>
             </div>
