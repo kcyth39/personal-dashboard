@@ -1,0 +1,26 @@
+{
+    "links": [
+        {
+            "name": "Workspace",
+            "url": "#",
+            "icon": "💼"
+        },
+        {
+            "name": "Portfolio",
+            "url": "#",
+            "icon": "📈"
+        },
+        {
+            "name": "Mail",
+            "url": "#",
+            "icon": "✉️"
+        }
+    ],
+    "tips": [
+        "MacのSpotlight (Cmd + Space) を電卓代わりに使えます。",
+        "Optionキーを押しながらWi-Fiアイコンをクリックすると詳細情報が見られます。",
+        "水を飲むのを忘れないでくださいね💧",
+        "ブラウザタブは Cmd + Shift + T で閉じたものを復活できます。",
+        "Cmd + Shift + 4 の後に Spaceキー を押すと選択したウィンドウだけをスクショできます。"
+    ]
+}
