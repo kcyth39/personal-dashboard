@@ -4,6 +4,7 @@ import CalendarCard from './components/CalendarCard';
 import LinksCard from './components/LinksCard';
 import TipsCard from './components/TipsCard';
 import WeatherCard from './components/WeatherCard';
+import CustomWeatherCard from './components/CustomWeatherCard';
 
 function App() {
   const [time, setTime] = React.useState(new Date());
@@ -91,6 +92,7 @@ function App() {
           {/* Right Column: Weather, Calendar, Links */}
           <div className="md:col-span-4 flex flex-col gap-4">
             <WeatherCard />
+            <CustomWeatherCard />
             <CalendarCard />
             <LinksCard />
           </div>

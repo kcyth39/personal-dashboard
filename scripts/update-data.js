@@ -134,14 +134,19 @@ async function updateData() {
         existingData.market = market;
     }
 
-    // 天気データも毎回更新（5分間隔想定）
-    const weather = await fetchWeather(location.lat, location.lon);
-    if (weather) {
-        existingData.weather = weather;
+    // ニュースと天気は30分間隔で更新
+    const lastNewsUpdate = existingData.news.lastUpdated ? new Date(existingData.news.lastUpdated) : new Date(0);
+    const lastWeatherUpdate = existingData.weather.lastUpdated ? new Date(existingData.weather.lastUpdated) : new Date(0);
+
+    // 天気の更新
+    if (now - lastWeatherUpdate >= 30 * 60 * 1000) {
+        const weather = await fetchWeather(location.lat, location.lon);
+        if (weather) {
+            existingData.weather = weather;
+        }
     }
 
-    // ニュースは30分間隔で更新
-    const lastNewsUpdate = existingData.news.lastUpdated ? new Date(existingData.news.lastUpdated) : new Date(0);
+    // ニュースの更新
     if (now - lastNewsUpdate >= 30 * 60 * 1000) {
         const news = await fetchNews();
         if (news) {
