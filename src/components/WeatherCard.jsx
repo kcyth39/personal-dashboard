@@ -46,6 +46,8 @@ export default function WeatherCard() {
     }
 
     const weather = getWeatherInfo(data.current.weatherCode);
+    const today = data.daily.today || data.daily; // 互換性維持
+    const tomorrow = data.daily.tomorrow;
 
     return (
         <div className={`glass-panel p-4 rounded-xl flex flex-col overflow-hidden bg-gradient-to-br ${weather.color}`}>
@@ -59,7 +61,7 @@ export default function WeatherCard() {
                 </span>
             </div>
 
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between mb-4">
                 <div className="flex items-center space-x-3">
                     <div className="text-4xl">
                         {weather.icon}
@@ -69,27 +71,48 @@ export default function WeatherCard() {
                             {Math.round(data.current.temp)}°
                         </div>
                         <div className="text-[10px] font-bold text-gray-500 dark:text-gray-400 mt-1">
-                            {weather.label}
+                            {weather.label} / 湿度 {data.current.humidity}%
                         </div>
                     </div>
                 </div>
 
-                <div className="text-right flex items-center space-x-3">
-                    <div className="space-y-0.5">
-                        <div className="flex items-center justify-end text-rose-500 font-black text-xs leading-none">
-                            <FaArrowUp className="text-[8px] mr-1" />
-                            {Math.round(data.daily.tempMax)}°
-                        </div>
-                        <div className="flex items-center justify-end text-blue-500 font-black text-xs leading-none">
-                            <FaArrowDown className="text-[8px] mr-1" />
-                            {Math.round(data.daily.tempMin)}°
-                        </div>
+                <div className="text-right">
+                    <div className="flex items-center justify-end text-rose-500 font-black text-sm leading-none">
+                        <FaArrowUp className="text-[10px] mr-1" />
+                        {Math.round(today.tempMax)}°
                     </div>
-                    <div className="text-[9px] text-gray-400 font-bold border-l border-gray-300 dark:border-gray-700 pl-3">
-                        湿度<br />{data.current.humidity}%
+                    <div className="flex items-center justify-end text-blue-500 font-black text-sm leading-none mt-1">
+                        <FaArrowDown className="text-[10px] mr-1" />
+                        {Math.round(today.tempMin)}°
                     </div>
+                    <div className="text-[8px] text-gray-400 font-bold mt-1 uppercase">Today</div>
                 </div>
             </div>
+
+            {/* Forecast Section */}
+            {tomorrow && (
+                <div className="border-t border-white/20 dark:border-gray-700 pt-3 flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                        <span className="text-[10px] font-bold bg-white/30 px-2 py-0.5 rounded text-gray-600 dark:text-gray-300">あす</span>
+                        <div className="text-xl">
+                            {getWeatherInfo(tomorrow.weatherCode).icon}
+                        </div>
+                        <span className="text-[10px] font-bold text-gray-500 dark:text-gray-400">
+                            {getWeatherInfo(tomorrow.weatherCode).label}
+                        </span>
+                    </div>
+                    <div className="flex items-center space-x-3">
+                        <div className="flex items-center text-rose-500 font-black text-xs">
+                            <FaArrowUp className="text-[8px] mr-1" />
+                            {Math.round(tomorrow.tempMax)}°
+                        </div>
+                        <div className="flex items-center text-blue-500 font-black text-xs">
+                            <FaArrowDown className="text-[8px] mr-1" />
+                            {Math.round(tomorrow.tempMin)}°
+                        </div>
+                    </div>
+                </div>
+            )}
         </div>
     );
 }

@@ -104,7 +104,7 @@ export default function CustomWeatherCard() {
                         {error && <span className="text-[9px] text-rose-500 font-bold">{error}</span>}
                     </div>
 
-                    <div className="flex items-center justify-between">
+                    <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center space-x-3">
                             <div className="text-3xl">
                                 {weather.icon}
@@ -114,24 +114,43 @@ export default function CustomWeatherCard() {
                                     {Math.round(weatherData.current.temperature_2m)}°
                                 </div>
                                 <div className="text-[9px] font-bold text-gray-500 dark:text-gray-400 mt-0.5">
-                                    {weather.label}
+                                    {weather.label} / 湿度 {weatherData.current.relative_humidity_2m}%
                                 </div>
                             </div>
                         </div>
 
-                        <div className="text-right flex items-center space-x-2">
-                            <div className="space-y-0.5">
-                                <div className="flex items-center justify-end text-rose-500 font-black text-[10px] leading-none">
-                                    <FaArrowUp className="text-[7px] mr-1" />
-                                    {Math.round(weatherData.daily.temperature_2m_max[0])}°
-                                </div>
-                                <div className="flex items-center justify-end text-blue-500 font-black text-[10px] leading-none">
-                                    <FaArrowDown className="text-[7px] mr-1" />
-                                    {Math.round(weatherData.daily.temperature_2m_min[0])}°
-                                </div>
+                        <div className="text-right">
+                            <div className="flex items-center justify-end text-rose-500 font-black text-xs leading-none">
+                                <FaArrowUp className="text-[8px] mr-1" />
+                                {Math.round(weatherData.daily.temperature_2m_max[0])}°
                             </div>
-                            <div className="text-[8px] text-gray-400 font-bold border-l border-gray-300 dark:border-gray-700 pl-2">
-                                湿度<br />{weatherData.current.relative_humidity_2m}%
+                            <div className="flex items-center justify-end text-blue-500 font-black text-xs leading-none mt-1">
+                                <FaArrowDown className="text-[8px] mr-1" />
+                                {Math.round(weatherData.daily.temperature_2m_min[0])}°
+                            </div>
+                            <div className="text-[7px] text-gray-400 font-bold mt-1 uppercase">Today</div>
+                        </div>
+                    </div>
+
+                    {/* Tomorrow Forecast */}
+                    <div className="border-t border-white/20 dark:border-gray-700 pt-3 flex items-center justify-between">
+                        <div className="flex items-center space-x-2">
+                            <span className="text-[9px] font-bold bg-white/30 px-1.5 py-0.5 rounded text-gray-600 dark:text-gray-300">あす</span>
+                            <div className="text-lg">
+                                {getWeatherInfo(weatherData.daily.weather_code[1]).icon}
+                            </div>
+                            <span className="text-[9px] font-bold text-gray-500 dark:text-gray-400">
+                                {getWeatherInfo(weatherData.daily.weather_code[1]).label}
+                            </span>
+                        </div>
+                        <div className="flex items-center space-x-2">
+                            <div className="flex items-center text-rose-500 font-black text-[10px]">
+                                <FaArrowUp className="text-[7px] mr-1" />
+                                {Math.round(weatherData.daily.temperature_2m_max[1])}°
+                            </div>
+                            <div className="flex items-center text-blue-500 font-black text-[10px]">
+                                <FaArrowDown className="text-[7px] mr-1" />
+                                {Math.round(weatherData.daily.temperature_2m_min[1])}°
                             </div>
                         </div>
                     </div>

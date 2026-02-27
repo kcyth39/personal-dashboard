@@ -29,9 +29,16 @@ async function fetchWeather(lat, lon) {
                 weatherCode: data.current.weather_code,
             },
             daily: {
-                tempMax: data.daily.temperature_2m_max[0],
-                tempMin: data.daily.temperature_2m_min[0],
-                weatherCode: data.daily.weather_code[0],
+                today: {
+                    tempMax: data.daily.temperature_2m_max[0],
+                    tempMin: data.daily.temperature_2m_min[0],
+                    weatherCode: data.daily.weather_code[0],
+                },
+                tomorrow: {
+                    tempMax: data.daily.temperature_2m_max[1],
+                    tempMin: data.daily.temperature_2m_min[1],
+                    weatherCode: data.daily.weather_code[1],
+                }
             },
             lastUpdated: new Date().toISOString()
         };
@@ -138,8 +145,9 @@ async function updateData() {
     const lastNewsUpdate = existingData.news.lastUpdated ? new Date(existingData.news.lastUpdated) : new Date(0);
     const lastWeatherUpdate = existingData.weather.lastUpdated ? new Date(existingData.weather.lastUpdated) : new Date(0);
 
-    // 天気の更新
-    if (now - lastWeatherUpdate >= 30 * 60 * 1000) {
+    // 天気の更新 (新構造がない場合は強制)
+    const hasNextData = existingData.weather.daily && existingData.weather.daily.tomorrow;
+    if (now - lastWeatherUpdate >= 30 * 60 * 1000 || !hasNextData) {
         const weather = await fetchWeather(location.lat, location.lon);
         if (weather) {
             existingData.weather = weather;
