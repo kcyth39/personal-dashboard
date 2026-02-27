@@ -32,5 +32,15 @@
         "name": "大阪",
         "lat": 34.6937,
         "lon": 135.5023
-    }
+    },
+    "rssFeeds": [
+        {
+            "name": "ITmedia 総合",
+            "url": "https://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml"
+        },
+        {
+            "name": "Yahoo! ビジネス",
+            "url": "https://news.yahoo.co.jp/rss/categories/business.xml"
+        }
+    ]
 }

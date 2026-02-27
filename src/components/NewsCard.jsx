@@ -71,32 +71,80 @@ export default function NewsCard() {
                 </div>
             </div>
 
-            {/* News Section */}
-            <div className="flex-1 flex flex-col min-h-0">
-                <div className="flex items-center justify-between mb-4">
-                    <div className="flex items-center space-x-3">
-                        <FaRegNewspaper className="text-violet-500 text-2xl" />
-                        <h2 className="text-xl font-bold">Top News</h2>
+            {/* News Sections (2 columns) */}
+            <div className="flex-1 min-h-0 grid grid-cols-1 lg:grid-cols-2 gap-8 overflow-hidden pt-2">
+                {/* Column 1: Top News */}
+                <div className="flex flex-col min-h-0 overflow-hidden">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                            <FaRegNewspaper className="text-violet-500 text-2xl" />
+                            <h2 className="text-xl font-bold">Top News</h2>
+                        </div>
+                        <span className="text-[10px] text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
+                            {formatTime(data.news.top?.lastUpdated)}
+                        </span>
                     </div>
-                    <span className="text-xs text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
-                        {formatTime(data.news.lastUpdated)} 更新
-                    </span>
+                    <div className="flex-1 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
+                        {data.news.top?.items?.map((news, idx) => (
+                            <a
+                                key={idx}
+                                href={news.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group block p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-white/10 dark:bg-slate-800/10"
+                            >
+                                <h3 className="text-sm font-medium leading-snug line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors uppercase-first-letter">
+                                    {news.title}
+                                </h3>
+                                <div className="flex justify-between items-center mt-2">
+                                    <span className="text-[10px] text-gray-400">
+                                        {new Date(news.pubDate).toLocaleString('ja-JP', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                                    </span>
+                                </div>
+                            </a>
+                        ))}
+                    </div>
                 </div>
-                <div className="flex-1 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
-                    {data.news.items.map((news, idx) => (
-                        <a
-                            key={idx}
-                            href={news.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="group block p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700"
-                        >
-                            <h3 className="text-sm font-medium leading-snug line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">{news.title}</h3>
-                            <span className="text-[10px] text-gray-400 mt-1.5 block">
-                                {new Date(news.pubDate).toLocaleString('ja-JP', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                            </span>
-                        </a>
-                    ))}
+
+                {/* Column 2: RSS Reader */}
+                <div className="flex flex-col min-h-0 overflow-hidden">
+                    <div className="flex items-center justify-between mb-4">
+                        <div className="flex items-center space-x-3">
+                            <FaChartLine className="text-emerald-500 text-2xl" />
+                            <h2 className="text-xl font-bold">RSS Feed</h2>
+                        </div>
+                        <span className="text-[10px] text-gray-400 bg-gray-100 dark:bg-gray-800 px-2 py-1 rounded-full">
+                            {formatTime(data.news.rss?.lastUpdated)}
+                        </span>
+                    </div>
+                    <div className="flex-1 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
+                        {data.news.rss?.items?.map((news, idx) => (
+                            <a
+                                key={idx}
+                                href={news.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group block p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-white/10 dark:bg-slate-800/10"
+                            >
+                                <div className="flex items-center space-x-2 mb-1">
+                                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 uppercase tracking-tighter">
+                                        {news.source}
+                                    </span>
+                                </div>
+                                <h3 className="text-sm font-medium leading-snug line-clamp-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                    {news.title}
+                                </h3>
+                                <span className="text-[10px] text-gray-400 mt-2 block">
+                                    {new Date(news.pubDate).toLocaleString('ja-JP', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                                </span>
+                            </a>
+                        ))}
+                        {(!data.news.rss?.items || data.news.rss?.items.length === 0) && (
+                            <div className="flex flex-col items-center justify-center h-full text-gray-400 py-10">
+                                <p className="text-xs">No RSS items found</p>
+                            </div>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>

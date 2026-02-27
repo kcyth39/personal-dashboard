@@ -49,16 +49,50 @@ async function fetchWeather(lat, lon) {
 }
 
 // ニュース取得関数
-async function fetchNews() {
-    console.log('Fetching Google News...');
+async function fetchNews(rssFeeds = []) {
+    console.log('Fetching Google News and RSS feeds...');
+    const topNewsUrl = 'https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja';
+
     try {
-        const feed = await parser.parseURL('https://news.google.com/rss?hl=ja&gl=JP&ceid=JP:ja');
+        // Top News (Google News)
+        const topFeed = await parser.parseURL(topNewsUrl);
+        const topItems = topFeed.items.slice(0, 10).map(item => ({
+            title: item.title,
+            link: item.link,
+            pubDate: item.pubDate,
+            source: 'Google News'
+        }));
+
+        // RSS feeds from config
+        let rssItems = [];
+        for (const feedConfig of rssFeeds) {
+            try {
+                console.log(`  - Fetching RSS: ${feedConfig.name}...`);
+                const feed = await parser.parseURL(feedConfig.url);
+                const items = feed.items.slice(0, 7).map(item => ({
+                    title: item.title,
+                    link: item.link,
+                    pubDate: item.pubDate,
+                    source: feedConfig.name
+                }));
+                rssItems = [...rssItems, ...items];
+            } catch (err) {
+                console.error(`  - Error fetching ${feedConfig.name}:`, err.message);
+            }
+        }
+
+        // 日付順にソート (RSS全体)
+        rssItems.sort((a, b) => new Date(b.pubDate) - new Date(a.pubDate));
+
         return {
-            items: feed.items.slice(0, 10).map(item => ({
-                title: item.title,
-                link: item.link,
-                pubDate: item.pubDate
-            })),
+            top: {
+                items: topItems,
+                lastUpdated: new Date().toISOString()
+            },
+            rss: {
+                items: rssItems.slice(0, 20),
+                lastUpdated: new Date().toISOString()
+            },
             lastUpdated: new Date().toISOString()
         };
     } catch (error) {
@@ -109,12 +143,14 @@ async function updateData() {
         fs.mkdirSync(DATA_DIR, { recursive: true });
     }
 
-    // デフォルトの場所設定
+    // 設定ファイルの読み込み
     let location = { lat: 35.6895, lon: 139.6917 };
+    let rssFeeds = [];
     if (fs.existsSync(CONFIG_PATH)) {
         try {
             const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
             if (config.location) location = config.location;
+            if (config.rssFeeds) rssFeeds = config.rssFeeds;
         } catch (e) {
             console.error('Error reading config:', e.message);
         }
@@ -156,8 +192,8 @@ async function updateData() {
     }
 
     // ニュースの更新
-    if (now - lastNewsUpdate >= 30 * 60 * 1000) {
-        const news = await fetchNews();
+    if (now - lastNewsUpdate >= 30 * 60 * 1000 || !existingData.news.top) {
+        const news = await fetchNews(rssFeeds);
         if (news) {
             existingData.news = news;
         }
