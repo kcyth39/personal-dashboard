@@ -3,6 +3,7 @@ import NewsCard from './components/NewsCard';
 import CalendarCard from './components/CalendarCard';
 import LinksCard from './components/LinksCard';
 import TipsCard from './components/TipsCard';
+import WeatherCard from './components/WeatherCard';
 
 function App() {
   const [time, setTime] = React.useState(new Date());
@@ -34,6 +35,11 @@ function App() {
         {/* News Section (Large) */}
         <div className="md:col-span-8 md:row-span-2 min-h-[400px]">
           <NewsCard />
+        </div>
+
+        {/* Weather Section */}
+        <div className="md:col-span-4 min-h-[200px]">
+          <WeatherCard />
         </div>
 
         {/* Calendar Section */}

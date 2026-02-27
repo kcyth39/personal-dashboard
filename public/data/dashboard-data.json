@@ -73,22 +73,35 @@
         "name": "S&P 500"
       },
       "gold": {
-        "price": 5195.6,
-        "change": 1.3999023,
-        "changePercent": 0.026951259,
+        "price": 5197.2,
+        "change": 3,
+        "changePercent": 0.057756726,
         "currency": "USD",
         "symbol": "GC=F",
         "name": "Gold Apr 26"
       },
       "usdjpy": {
-        "price": 155.979,
-        "change": -0.11099243,
-        "changePercent": -0.071107976,
+        "price": 156.098,
+        "change": 0.008010864,
+        "changePercent": 0.0051325047,
         "currency": "JPY",
         "symbol": "USDJPY=X",
         "name": "USD/JPY"
       }
     },
-    "lastUpdated": "2026-02-27T08:25:57.363Z"
+    "lastUpdated": "2026-02-27T08:50:57.374Z"
+  },
+  "weather": {
+    "current": {
+      "temp": 12,
+      "humidity": 82,
+      "weatherCode": 3
+    },
+    "daily": {
+      "tempMax": 14.1,
+      "tempMin": 6.3,
+      "weatherCode": 3
+    },
+    "lastUpdated": "2026-02-27T08:49:42.367Z"
   }
 }

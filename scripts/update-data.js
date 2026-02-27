@@ -11,7 +11,35 @@ const __dirname = path.dirname(__filename);
 
 const DATA_DIR = path.join(__dirname, '../public/data');
 const DATA_PATH = path.join(DATA_DIR, 'dashboard-data.json');
+const CONFIG_PATH = path.join(DATA_DIR, 'dashboard-config.json');
 const parser = new Parser();
+
+// 天気取得関数 (Open-Meteo)
+async function fetchWeather(lat, lon) {
+    console.log(`Fetching Weather for ${lat}, ${lon}...`);
+    try {
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        return {
+            current: {
+                temp: data.current.temperature_2m,
+                humidity: data.current.relative_humidity_2m,
+                weatherCode: data.current.weather_code,
+            },
+            daily: {
+                tempMax: data.daily.temperature_2m_max[0],
+                tempMin: data.daily.temperature_2m_min[0],
+                weatherCode: data.daily.weather_code[0],
+            },
+            lastUpdated: new Date().toISOString()
+        };
+    } catch (error) {
+        console.error('Error fetching weather:', error.message);
+        return null;
+    }
+}
 
 // ニュース取得関数
 async function fetchNews() {
@@ -73,9 +101,21 @@ async function updateData() {
         fs.mkdirSync(DATA_DIR, { recursive: true });
     }
 
+    // デフォルトの場所設定
+    let location = { lat: 35.6895, lon: 139.6917 };
+    if (fs.existsSync(CONFIG_PATH)) {
+        try {
+            const config = JSON.parse(fs.readFileSync(CONFIG_PATH, 'utf-8'));
+            if (config.location) location = config.location;
+        } catch (e) {
+            console.error('Error reading config:', e.message);
+        }
+    }
+
     let existingData = {
         news: { items: [], lastUpdated: null },
-        market: { data: {}, lastUpdated: null }
+        market: { data: {}, lastUpdated: null },
+        weather: { current: {}, daily: {}, lastUpdated: null }
     };
 
     if (fs.existsSync(DATA_PATH)) {
@@ -94,6 +134,12 @@ async function updateData() {
         existingData.market = market;
     }
 
+    // 天気データも毎回更新（5分間隔想定）
+    const weather = await fetchWeather(location.lat, location.lon);
+    if (weather) {
+        existingData.weather = weather;
+    }
+
     // ニュースは30分間隔で更新
     const lastNewsUpdate = existingData.news.lastUpdated ? new Date(existingData.news.lastUpdated) : new Date(0);
     if (now - lastNewsUpdate >= 30 * 60 * 1000) {
@@ -104,7 +150,7 @@ async function updateData() {
     }
 
     fs.writeFileSync(DATA_PATH, JSON.stringify(existingData, null, 2));
-    console.log(`[${now.toLocaleTimeString()}] Dashboard data updated.`);
+    console.log(`[${now.toLocaleTimeString()}] Dashboard data updated (including weather).`);
 }
 
 // 初回実行
