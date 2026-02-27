@@ -40,12 +40,12 @@ export default function NewsCard() {
                     <div className="flex items-center space-x-3">
                         <FaChartLine className="text-blue-500 text-2xl" />
                         <h2 className="text-xl font-bold text-gray-800 dark:text-white">Market</h2>
-                        <div className="hidden sm:flex items-center space-x-2 ml-4">
-                            <a href="https://www.nikkei.com/" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-500 hover:underline font-bold">日経</a>
+                        <div className="hidden sm:flex items-center space-x-3 ml-4">
+                            <a href="https://www.nikkei.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-colors">NIKKEI</a>
                             <span className="text-gray-300 dark:text-gray-600">|</span>
-                            <a href="https://shikiho.toyokeizai.net/" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-500 hover:underline font-bold">四季報</a>
+                            <a href="https://shikiho.toyokeizai.net/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-colors">四季報</a>
                             <span className="text-gray-300 dark:text-gray-600">|</span>
-                            <a href="https://www.sbisec.co.jp/ETGate/" target="_blank" rel="noopener noreferrer" className="text-[10px] text-blue-500 hover:underline font-bold">SBI</a>
+                            <a href="https://www.sbisec.co.jp/ETGate/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-colors">SBI</a>
                         </div>
                     </div>
                     <span className="text-xs text-gray-400 bg-white/50 dark:bg-gray-800 px-2 py-1 rounded-full border border-gray-100 dark:border-gray-700">
