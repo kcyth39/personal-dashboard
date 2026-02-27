@@ -69,10 +69,11 @@ async function fetchNews(rssFeeds = []) {
             try {
                 console.log(`  - Fetching RSS: ${feedConfig.name}...`);
                 const feed = await parser.parseURL(feedConfig.url);
-                const items = feed.items.slice(0, 7).map(item => ({
+                console.log(`    * Found ${feed.items.length} items`);
+                const items = feed.items.slice(0, 10).map(item => ({
                     title: item.title,
                     link: item.link,
-                    pubDate: item.pubDate,
+                    pubDate: item.pubDate || item.isoDate || item.date || new Date().toISOString(),
                     source: feedConfig.name
                 }));
                 rssItems = [...rssItems, ...items];
@@ -90,7 +91,7 @@ async function fetchNews(rssFeeds = []) {
                 lastUpdated: new Date().toISOString()
             },
             rss: {
-                items: rssItems.slice(0, 20),
+                items: rssItems.slice(0, 40),
                 lastUpdated: new Date().toISOString()
             },
             lastUpdated: new Date().toISOString()

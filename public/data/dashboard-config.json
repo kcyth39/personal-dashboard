@@ -35,6 +35,18 @@
     },
     "rssFeeds": [
         {
+            "name": "ロケットニュース24",
+            "url": "https://rocketnews24.com/feed/"
+        },
+        {
+            "name": "タビリス",
+            "url": "https://tabiris.com/feed/"
+        },
+        {
+            "name": "マイナビニュース",
+            "url": "https://news.mynavi.jp/rss/index"
+        },
+        {
             "name": "ITmedia 総合",
             "url": "https://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml"
         },
