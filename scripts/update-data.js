@@ -1,5 +1,6 @@
 import fs from 'fs';
 import path from 'path';
+import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import Parser from 'rss-parser';
 import YahooFinance from 'yahoo-finance2';
@@ -57,6 +58,7 @@ async function fetchNews(rssFeeds = []) {
         // Top News (Google News)
         const topFeed = await parser.parseURL(topNewsUrl);
         const topItems = topFeed.items.slice(0, 10).map(item => ({
+            id: crypto.createHash('sha256').update(item.link).digest('hex').substring(0, 12),
             title: item.title,
             link: item.link,
             pubDate: item.pubDate,
@@ -70,7 +72,8 @@ async function fetchNews(rssFeeds = []) {
                 console.log(`  - Fetching RSS: ${feedConfig.name}...`);
                 const feed = await parser.parseURL(feedConfig.url);
                 console.log(`    * Found ${feed.items.length} items`);
-                const items = feed.items.slice(0, 10).map(item => ({
+                const items = feed.items.slice(0, 30).map(item => ({
+                    id: crypto.createHash('sha256').update(item.link).digest('hex').substring(0, 12),
                     title: item.title,
                     link: item.link,
                     pubDate: item.pubDate || item.isoDate || item.date || new Date().toISOString(),
@@ -91,7 +94,7 @@ async function fetchNews(rssFeeds = []) {
                 lastUpdated: new Date().toISOString()
             },
             rss: {
-                items: rssItems.slice(0, 40),
+                items: rssItems.slice(0, 100),
                 lastUpdated: new Date().toISOString()
             },
             lastUpdated: new Date().toISOString()
@@ -192,8 +195,8 @@ async function updateData() {
         }
     }
 
-    // ニュースの更新
-    if (now - lastNewsUpdate >= 30 * 60 * 1000 || !existingData.news.top) {
+    // ニュースの更新 (ID欠落を防ぐため、top構造がないか30分経過で更新)
+    if (now - lastNewsUpdate >= 30 * 60 * 1000 || !existingData.news.top || !existingData.news.top.items[0]?.id) {
         const news = await fetchNews(rssFeeds);
         if (news) {
             existingData.news = news;

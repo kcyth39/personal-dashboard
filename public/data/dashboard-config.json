@@ -35,6 +35,10 @@
     },
     "rssFeeds": [
         {
+            "name": "ギズモード",
+            "url": "http://feeds.gizmodo.jp/rss/gizmodo/index.xml"
+        },
+        {
             "name": "ロケットニュース24",
             "url": "https://rocketnews24.com/feed/"
         },
@@ -43,16 +47,8 @@
             "url": "https://tabiris.com/feed/"
         },
         {
-            "name": "マイナビニュース",
-            "url": "https://news.mynavi.jp/rss/index"
-        },
-        {
             "name": "ITmedia 総合",
             "url": "https://rss.itmedia.co.jp/rss/2.0/itmedia_all.xml"
-        },
-        {
-            "name": "Yahoo! ビジネス",
-            "url": "https://news.yahoo.co.jp/rss/categories/business.xml"
         }
     ]
 }

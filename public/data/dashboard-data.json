@@ -3,194 +3,714 @@
     "top": {
       "items": [
         {
-          "title": "高市首相、皇位継承「男系男子限定が適切」 木原官房長官、養子縁組念頭と釈明：時事ドットコム - 時事ドットコム",
-          "link": "https://news.google.com/rss/articles/CBMiY0FVX3lxTE5XQ3RGQVZxR0EzUk9DZjhYak03SlA4OUxzT1FUS1pwOXBkMzBWeXB3TWwtQlozRkN2Sk5KVFkxYVBIVDlzMTgtY05iMDEzZmN6cTBpbXB3SWdpeXBMeXZqYmFUTQ?oc=5",
-          "pubDate": "Fri, 27 Feb 2026 10:24:00 GMT",
-          "source": "Google News"
-        },
-        {
-          "title": "高市早苗首相「私に恥かかせるな」 米関税交渉担う赤沢亮正経産相に - 日本経済新聞",
-          "link": "https://news.google.com/rss/articles/CBMibEFVX3lxTE1BTmk2TTJiMkVUUE4tUTNqU1g5b3Z2NU1jNUdFOWNpV29kVmNZbUtnZmdwQ0lEMVFVTkhKRFpZelI3NzZQQ29tNEJGSExaT1NMeTBUYVZXUVpnYzB5MzhBa3BpZ0RSTmcwaFZYZw?oc=5",
-          "pubDate": "Fri, 27 Feb 2026 12:40:00 GMT",
-          "source": "Google News"
-        },
-        {
-          "title": "焦点：中国軍用ドローンが他国機「なりすまし」飛行、台湾想定の演習か - Reuters",
-          "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE16UVpYMXYyU290WWFmdndIWGdSQmJmc05BYkIwblFHeHpkb3R2UFNWMy0xdVJhRUhQOHZhQ0VUbTRRblpDUmNmVjU0RmkyYlhELUtsWHJTQ1hoTWJFSHFuaTBoLVlRamlwMWRteUhPZDE0UVdoek1sa2JuZnh6OW8?oc=5",
-          "pubDate": "Fri, 27 Feb 2026 06:34:00 GMT",
-          "source": "Google News"
-        },
-        {
-          "title": "東京都ドクターヘリの一時運航休止について|2月|都庁総合ホームページ - metro.tokyo.lg.jp",
-          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBZei1XdDhMYnNZWHhlbkJxTW9VcGRvbWJQVUpLbEZQRDJMZjB3NlJ5UVJXWmZsQnV6UV9rOHBvQzhKRGNwV3lRcWZ3aWtGeVp2MTNIOHdSZUprY3FZZk1JeEFtV0N1dlBTUjBaOWFPRVJyaDd5?oc=5",
-          "pubDate": "Fri, 27 Feb 2026 08:01:00 GMT",
-          "source": "Google News"
-        },
-        {
+          "id": "f40d7405d17d",
           "title": "片山さつき財務相の絶妙答弁に野党「さすが」と“脱帽”暫定予算編成の可能性再三問われ切り返す（日刊スポーツ） - Yahoo!ニュース",
           "link": "https://news.google.com/rss/articles/CBMif0FVX3lxTE1wZllLYnFJQklUZ2N2LTAxWDRNX3FIcDZUelgxZFJNX1Y2Rk5IU2wyQ252TGFpMmVEWmVmeXhTckUyZlFWd0FUbHY1R2hhU0tZWHlvejVtTzhPZmd2Y21SRDFLbDRVMHRfRFozTkl5Y0J1UTcxdXFlNnJ0MUpMSHM?oc=5",
           "pubDate": "Fri, 27 Feb 2026 12:42:51 GMT",
           "source": "Google News"
         },
         {
+          "id": "75d7e71ddf5a",
+          "title": "明日28日は4月並みの暖かさ　3日は冷たい雨で気温低下　「皆既月食」は見られる?(気象予報士 堂本　幸代 2026年02月27日) - tenki.jp",
+          "link": "https://news.google.com/rss/articles/CBMicEFVX3lxTE03Z0VzNUw1N0ZYU0FRVmVTTHAyT0QteDczNUVTd2NQTzhBZnlaNnBsQXVHMlhvcGRPRGVFU3pHcHNSOXNGV0QzT3poMVIxVGtfYzBVbVZwSmJxTUpNT3YyajZ0WXlzVDJpcWcyc08ya3TSAXZBVV95cUxPMVk4blVuTVVXWXdFZ09peDdmZ2FVSEM4ZmhKWndfRmJfUUpRbHhqWGxfR2NEakJLcVF1cWs4VnRSSXQ2YkJZcHN1YTNPN2ludnAtS3g3bE8ySU1Qa1lKd09UeEYyQ1lvRjhOTFVCYmFaQ2pMYU9R?oc=5",
+          "pubDate": "Fri, 27 Feb 2026 09:24:57 GMT",
+          "source": "Google News"
+        },
+        {
+          "id": "25fedb3466b6",
+          "title": "東京都ドクターヘリの一時運航休止について|2月|都庁総合ホームページ - metro.tokyo.lg.jp",
+          "link": "https://news.google.com/rss/articles/CBMidEFVX3lxTFBZei1XdDhMYnNZWHhlbkJxTW9VcGRvbWJQVUpLbEZQRDJMZjB3NlJ5UVJXWmZsQnV6UV9rOHBvQzhKRGNwV3lRcWZ3aWtGeVp2MTNIOHdSZUprY3FZZk1JeEFtV0N1dlBTUjBaOWFPRVJyaDd5?oc=5",
+          "pubDate": "Fri, 27 Feb 2026 08:01:00 GMT",
+          "source": "Google News"
+        },
+        {
+          "id": "d41176cf058f",
           "title": "インフルエンザの患者数　4週連続で警報レベル超　28日～気温変化激しい　予防を(気象予報士 日直主任 2026年02月27日) - tenki.jp",
           "link": "https://news.google.com/rss/articles/CBMiakFVX3lxTFA3Nk5qUGNoV2dYOGJTYTJNbEVrMzFwS2dQc2VXT2xISm9tZzFCN0RCSXlGMF9FTDNoZEtINnlrZmd0al9aa3E0UmhUUUtna3FrWE8teVJpMTJRYnpJS2dVQVpIMG5WWTExN2fSAW9BVV95cUxNWGFRb1JhQmNhOTFQSmVwRmRoU1ZMczh1cFpuRHpxenBfbVdpb0FqS3F6VlRFelRSaU01Y2gtNHFWRnQ3UGoxUmtud29ycjdXMkE2YlAtcHR6SVU2UU9MQ0FqMndyMG5LN2ZaTE5veFU?oc=5",
           "pubDate": "Fri, 27 Feb 2026 06:27:21 GMT",
           "source": "Google News"
         },
         {
-          "title": "「辺野古の滑走路は短い」米海兵隊太平洋基地司令官が認識示す 普天間移設巡り - 産経ニュース",
-          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5HRUdoOGVFd19CY2dYSkZ6SzVDbElDa0F1YkZOS2trZWlmMDNRWGJuVFBDdU55MF9yVGxLWXNwbzBRS2Y5MDFKUy1XcmZpRDhpS2hTeThXaTRRbEQ0Yk1jUlU3QWRjZFBGTWtkRHZIQ1Jhb2wtd1E?oc=5",
-          "pubDate": "Fri, 27 Feb 2026 10:03:32 GMT",
-          "source": "Google News"
-        },
-        {
-          "title": "【速報】宮崎県知事選に元職東国原氏が出馬検討 - 47NEWS",
-          "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE44V3ZIVXNQcmswM3NsRVpyei1ic0stOHpXeFFlcW5zVjU0empVYV9BRl9uM0FOVHZjRFM0cjRIQ21KZm5xWlhWTm5oRQ?oc=5",
-          "pubDate": "Fri, 27 Feb 2026 09:58:03 GMT",
-          "source": "Google News"
-        },
-        {
+          "id": "2723b5177f81",
           "title": "はしか感染者が福岡空港や市地下鉄利用 - 西日本新聞me",
           "link": "https://news.google.com/rss/articles/CBMiVkFVX3lxTE5OYlBFV1U5WVh5NW40cDBsTlAzSm5RTzVkNUUyd3hlbkhKMm5Iamd2MFZYR3hidXgwWW1NckJTRUVxZ1NFbHFtOGR0elhRa2JBRXFkMUh3?oc=5",
           "pubDate": "Fri, 27 Feb 2026 08:03:00 GMT",
           "source": "Google News"
         },
         {
+          "id": "0bbff125cf40",
+          "title": "「NHK支局長拘束」報道 収容先「エビン刑務所」の待遇は「イラン人なら劣悪なレベル」 - 産経ニュース",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5sbXl6cGZGcmtIbWxlMWpQTkRfSDl0SU5rSFgxQXJsSDh0eXpycWYwazJQSGJFaUdYeGt4bFRqSlR2emtfOGV0MTd4ekJkVjhtV0dFbEVlSXFtVHVwdzNMRWNEcmpNeko3MnA1YXZBcFJwYktHLVE?oc=5",
+          "pubDate": "Fri, 27 Feb 2026 08:27:16 GMT",
+          "source": "Google News"
+        },
+        {
+          "id": "457d7c8427a3",
+          "title": "【速報】宮崎県知事選に元職東国原氏が出馬検討 - 47NEWS",
+          "link": "https://news.google.com/rss/articles/CBMiS0FVX3lxTE44V3ZIVXNQcmswM3NsRVpyei1ic0stOHpXeFFlcW5zVjU0empVYV9BRl9uM0FOVHZjRFM0cjRIQ21KZm5xWlhWTm5oRQ?oc=5",
+          "pubDate": "Fri, 27 Feb 2026 09:58:03 GMT",
+          "source": "Google News"
+        },
+        {
+          "id": "d4f54e688461",
+          "title": "悠仁さま、京都で能衣装の工房ご見学 機織り機を体験「随分艶がありますね」 - 産経ニュース",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE9jdDBlZTVuaWxaNkZYbVdST0w4clRyYzB5US10TkJVME9kTjVUUEx0dTFjeWdfWVI2YzdaYWsxMzFxdXExNW1icGN1dGNCaDhGV0ppWGVVMlZ2ZFYwVjVISTJ6dm1IcFJFd2xTSlZjdjJTUUJTTWc?oc=5",
+          "pubDate": "Fri, 27 Feb 2026 05:30:55 GMT",
+          "source": "Google News"
+        },
+        {
+          "id": "1e9882c60472",
+          "title": "「辺野古の滑走路は短い」米海兵隊太平洋基地司令官が認識示す 普天間移設巡り - 産経ニュース",
+          "link": "https://news.google.com/rss/articles/CBMidkFVX3lxTE5HRUdoOGVFd19CY2dYSkZ6SzVDbElDa0F1YkZOS2trZWlmMDNRWGJuVFBDdU55MF9yVGxLWXNwbzBRS2Y5MDFKUy1XcmZpRDhpS2hTeThXaTRRbEQ0Yk1jUlU3QWRjZFBGTWtkRHZIQ1Jhb2wtd1E?oc=5",
+          "pubDate": "Fri, 27 Feb 2026 10:03:32 GMT",
+          "source": "Google News"
+        },
+        {
+          "id": "d9a63f9068e9",
           "title": "鳥羽沖の船衝突、「貨物船の往来が比較的多い」釣りポイントで双方に回避義務…「見張り」不十分だったか - 読売新聞オンライン",
           "link": "https://news.google.com/rss/articles/CBMiZkFVX3lxTFBJRTFQQlplZ3VHQkpBNjBSRXJPdlFjY2Uxci00VVBINS1Hd1pxdmJ2ZlZYRmREREwyOHBOYUlHTGVWZlJGcXBISFlZMk9GeTAyQ3hkM1ljWVA1UUNhQWlERGF4MWVudw?oc=5",
           "pubDate": "Fri, 27 Feb 2026 07:00:00 GMT",
           "source": "Google News"
         }
       ],
-      "lastUpdated": "2026-02-27T15:29:38.024Z"
+      "lastUpdated": "2026-02-27T16:56:45.662Z"
     },
     "rss": {
       "items": [
         {
+          "id": "e916bf0f2ade",
+          "title": "【噂まとめ】来るぞ、iPhone 17e。来週3月2日深夜に発表か（2/28 更新）",
+          "link": "https://www.gizmodo.jp/2026/02/iphone17e-rumors.html",
+          "pubDate": "Sat, 28 Feb 2026 00:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "cc1e098e79f4",
+          "title": "[ITmedia News] ポケモン新作「ポケットモンスター ウインド・ウェーブ」　Switch 2で2027年に発売へ",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news141.html",
+          "pubDate": "Fri, 27 Feb 2026 23:40:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "1fb74c4a62bc",
+          "title": "[ITmedia News] 新作ゲーム「ポケモンチャンピオンズ」はSwitch版が4月、スマホ版が夏に提供開始　基本プレイ無料",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news140.html",
+          "pubDate": "Fri, 27 Feb 2026 23:25:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "46e85db90d7d",
+          "title": "ダイソーの「ペットボトルキャップ」が快適。アウトドアにも最適",
+          "link": "https://www.gizmodo.jp/2026/02/daiso-pet-bottle-cap-gqv.html",
+          "pubDate": "Fri, 27 Feb 2026 23:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "76f0ef678593",
+          "title": "やめたいと思っていた「寝落ちスマホ」。“ブックライト”を取り入れたら習慣が変わりました",
+          "link": "https://www.gizmodo.jp/2026/02/glocusent_book-light_review.html",
+          "pubDate": "Fri, 27 Feb 2026 22:30:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "207e3a454e77",
+          "title": "[ITmedia News] マンガワンでの配信を停止します──漫画家からの宣言相次ぐ　小学館の声明に非難",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news139.html",
+          "pubDate": "Fri, 27 Feb 2026 22:15:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "9c20be61c647",
+          "title": "「防湿庫は黒」の常識にさよなら。真っ白イイじゃん #cpplus2026",
+          "link": "https://www.gizmodo.jp/2026/02/toyoliving_white.html",
+          "pubDate": "Fri, 27 Feb 2026 22:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "33fa864e4d18",
+          "title": "密猟撲滅への大きな一歩。世界初の「ライオンのDNA鑑定で有罪判決」",
+          "link": "https://www.gizmodo.jp/2026/02/lion-dna-forensics-helps-convict-poacher.html",
+          "pubDate": "Fri, 27 Feb 2026 21:30:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "dc05c2030fc7",
+          "title": "【Appleがやらねば俺らがやる】3月2日、21時からギズモードがApple新製品期待ライブするぜ！",
+          "link": "https://www.gizmodo.jp/2026/02/march2-2100jst-apple-live.html",
+          "pubDate": "Fri, 27 Feb 2026 21:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "74c6c7a02678",
+          "title": "手のひらサイズで延長コードもついてる。旅行のコンセント問題をまるっと解決するCIO 電源タップ",
+          "link": "https://www.gizmodo.jp/2026/02/313756-amazon-2602-cio-polariscube-builtincable-1-asl.html",
+          "pubDate": "Fri, 27 Feb 2026 20:55:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "ac1f40bbdea3",
+          "title": "「爪切り」をやめました。指先から毎日きちんとできると気持ちいい",
+          "link": "https://www.gizmodo.jp/2026/02/tsumeou-review.html",
+          "pubDate": "Fri, 27 Feb 2026 20:45:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "1528d2aa27fe",
+          "title": "[ITmedia Mobile] モバイルSuicaがいつの間にか“ゴールデン”に　そして忘れられる“車窓”",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news138.html",
+          "pubDate": "Fri, 27 Feb 2026 20:45:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "816b1f20f6c5",
+          "title": "AIは、人に寄り添うもうひとつの知性。Lenovoが描く未来は「AIツイン」",
+          "link": "https://www.gizmodo.jp/2026/02/lenovo_tech-world-japan-2026_event_report.html",
+          "pubDate": "Fri, 27 Feb 2026 20:30:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "90bd61361775",
+          "title": "[ITmedia News] 青色の岩石「ラピスラズリ」、糸魚川市で発見　国立科学博物館が発表　「国内での産出確認は初」",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news137.html",
+          "pubDate": "Fri, 27 Feb 2026 20:28:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "0d9dafbfb055",
+          "title": "むかし撮った“思い出の写真フィルム”を蘇らせよう。「フィルムスキャナー」でデジタル化しちゃうという手",
+          "link": "https://www.gizmodo.jp/2026/02/pulstek_cp_plus_2026.html",
+          "pubDate": "Fri, 27 Feb 2026 20:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "23801ba9f8d4",
+          "title": "表面がもっちりしていて痛気持ちいい。仕事中のながら運動にトリガーポイントのローラーを使ってみた",
+          "link": "https://www.gizmodo.jp/2026/02/2602-amazon-triggerpointroller-20w.html",
+          "pubDate": "Fri, 27 Feb 2026 19:55:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "bea42850a4d4",
+          "title": "[ITmedia News] 「18歳未満の画像をAIで性的加工」2025年に114件　被害者は中高生が9割　警察庁",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news136.html",
+          "pubDate": "Fri, 27 Feb 2026 19:49:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "001b4aa41d68",
           "title": "かつやの新作「タルタル盛り揚げ丼」は失敗作なのか？ 私のエビフライはタルタルの重みに耐えきれず折れた",
           "link": "https://rocketnews24.com/2026/02/27/2715040/",
           "pubDate": "Fri, 27 Feb 2026 10:30:13 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "6b09466dd951",
+          "title": "バッファロー、BDドライブの販売を終了へ。買うなら急いで",
+          "link": "https://www.gizmodo.jp/2026/02/buffalo-bd-drive-set-to-be-discontinued.html",
+          "pubDate": "Fri, 27 Feb 2026 19:30:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "4c24c38bf27f",
+          "title": "[ITmedia Mobile] モバイルバッテリー、飛行機内での使用禁止物に　国土交通省が4月中旬から",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news135.html",
+          "pubDate": "Fri, 27 Feb 2026 19:30:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "a302b1dae7f2",
+          "title": "[ITmedia Mobile] ドコモの「Galaxy S26」は2年で約7万円から　「Galaxy S26 Ultra」1TBは一括32万円超え",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news134.html",
+          "pubDate": "Fri, 27 Feb 2026 19:17:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "377738c6ca29",
+          "title": "[ITmedia News] 漫画「常人仮面」の配信停止巡り、小学館が謝罪　逮捕歴ありの原作者を名義変え起用　性加害の告発で物議に",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news131.html",
+          "pubDate": "Fri, 27 Feb 2026 19:12:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "266c9bbf998e",
+          "title": "[ITmedia Mobile] ドコモ、世界最小クラスうたう健康管理用スマートリング「SOXAI RING 2」発売　約4万円",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news132.html",
+          "pubDate": "Fri, 27 Feb 2026 19:05:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "cf97d4cb9c12",
+          "title": "座り心地を追求したコスパ抜群のワークチェア「YPS-S800」、本日よりクラファン開始",
+          "link": "https://www.gizmodo.jp/2026/02/yps-s800-gizmart-2.html",
+          "pubDate": "Fri, 27 Feb 2026 19:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "e33dc876d872",
+          "title": "ケーブル、まだ結んでる？ 本日発売10％オフ、CIOの半自動で戻る240Wの最適解",
+          "link": "https://www.gizmodo.jp/2026/02/amazon-timesale-2026-0227-3.html",
+          "pubDate": "Fri, 27 Feb 2026 18:55:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "44e4719f10af",
           "title": "【ケニアの神話と迷信】「妊婦は卵を食べてはいけない」と多くの部族で信じられているが、もし食べたらどうなるの？ カンバ通信：第446回",
           "link": "https://rocketnews24.com/2026/02/27/2714936/",
           "pubDate": "Fri, 27 Feb 2026 09:30:23 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "0f5fa320efa4",
+          "title": "3月2日に備えよ。ティム・クックCEOが複数の新製品発表を匂わせてきたぞ",
+          "link": "https://www.gizmodo.jp/2026/02/apple-launch-2026.html",
+          "pubDate": "Fri, 27 Feb 2026 18:15:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "5f68080da4be",
+          "title": "安価MacBookは「Apple版Chromebook」？狙うはiCloudサブスク増加",
+          "link": "https://www.gizmodo.jp/2026/02/rumored-cheap-macbook-could-be-like-a-chromebook-in-more-ways-than-one.html",
+          "pubDate": "Fri, 27 Feb 2026 18:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "c855dc4263c6",
+          "title": "[ITmedia Mobile] Amazonで整備品「iPhone 12（128GB）」が約3.8万円で販売中　6.1型サイズでMagSafeにも対応",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news129.html",
+          "pubDate": "Fri, 27 Feb 2026 18:00:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "046891027b32",
+          "title": "[ITmedia News] 伊藤穰一氏、デジタルガレージの専務執行役員を退任　理由は明かさず",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news128.html",
+          "pubDate": "Fri, 27 Feb 2026 17:55:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "e098d03864be",
+          "title": "[ITmedia PC USER] ASUS JAPANが新型ノートPCを一挙に披露　16型で約1.2kgな「Zenbook SORA 16」など目玉モデルが“めじろ押し”",
+          "link": "https://www.itmedia.co.jp/pcuser/articles/2602/27/news127.html",
+          "pubDate": "Fri, 27 Feb 2026 17:45:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "318081be0707",
+          "title": "レーザーで網膜に映像投影。 こわいけど、実はメリットばかりな技術",
+          "link": "https://www.gizmodo.jp/2026/02/tdk-qd-laser-4dt.html",
+          "pubDate": "Fri, 27 Feb 2026 17:35:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "a996d180878c",
           "title": "豪雪地帯の雪山を人力だけで除雪することはできるのか？ 実際に挑戦してみた結果、できないことはないけれど…",
           "link": "https://rocketnews24.com/2026/02/27/2714314/",
           "pubDate": "Fri, 27 Feb 2026 08:30:17 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "f7cc818a381a",
+          "title": "掃除が雑？ 段差に弱い？ ロボット掃除機への不安はDreame L40s Pro Ultraが解消してくれた",
+          "link": "https://www.gizmodo.jp/2026/02/dreame-l40s-pro-ultra.html",
+          "pubDate": "Fri, 27 Feb 2026 17:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "983be1311176",
+          "title": "[ITmedia Mobile] ビックカメラ、5000円分の「PayPayポイント」が10人に1人当たるキャンペーン開催　4月5日まで（予定）",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news122.html",
+          "pubDate": "Fri, 27 Feb 2026 16:36:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "cff0d5a22ad6",
+          "title": "スマホにストラップをつけたら、人生ちょっとラクになりました",
+          "link": "https://www.gizmodo.jp/2026/02/bales-wrist-strap-0fb.html",
+          "pubDate": "Fri, 27 Feb 2026 16:35:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "a3beb0b6eb5f",
+          "title": "[ITmedia News] 優先席巡るSNSの議論、マナー指摘し炎上ケースも　専門家「鵜呑みにする危険性」指摘",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news121.html",
+          "pubDate": "Fri, 27 Feb 2026 16:33:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "a144747029c2",
           "title": "【Amazon】最大83％オフ！ 価格が一気に下がった注目アイテム39選（2月27日）",
           "link": "https://rocketnews24.com/2026/02/27/2714969/",
           "pubDate": "Fri, 27 Feb 2026 07:30:03 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "1d37af5d93df",
+          "title": "[ITmedia Mobile] Googleの「かこって検索」、複数アイテムを一度に検索可能に　結果からそのままバーチャル試着も",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news124.html",
+          "pubDate": "Fri, 27 Feb 2026 16:30:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "5b9e713b43bb",
+          "title": "[ITmedia News] 日本語入力の老舗「ATOK」の生成AI新機能を試す　無料IMEが充実するなか、実質値上げに見合うのか",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news125.html",
+          "pubDate": "Fri, 27 Feb 2026 16:30:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "ea30815ae276",
+          "title": "[ITmedia PC USER] MSI、Core Ultra 5／7を搭載したCopilot＋ PC準拠のミニデスクトップPC",
+          "link": "https://www.itmedia.co.jp/pcuser/articles/2602/27/news118.html",
+          "pubDate": "Fri, 27 Feb 2026 16:15:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "a28d99f7f72c",
           "title": "「初デートにサイゼリヤはアリ派」へ捧ぐ！ 元バイトが教えるデートにおすすめのメニュー＆アレンジがこちら",
           "link": "https://rocketnews24.com/2026/02/27/2652143/",
           "pubDate": "Fri, 27 Feb 2026 07:00:31 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "ac007c1e502b",
+          "title": "スマホで聴こう。Marshallの有線イヤホンにUSB-Cモデルが出たよ",
+          "link": "https://www.gizmodo.jp/2026/02/marshall-mode-usb-c.html",
+          "pubDate": "Fri, 27 Feb 2026 16:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "cb66803707fc",
+          "title": "[ITmedia PC USER] ASUS、残像感低減機能「G-SYNC Pulsar」を搭載した27型WQHDゲーミング液晶ディスプレイ",
+          "link": "https://www.itmedia.co.jp/pcuser/articles/2602/27/news116.html",
+          "pubDate": "Fri, 27 Feb 2026 16:00:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "3565595f8e7b",
+          "title": "[ITmedia News] 海外顧客の物件購入をスマホアプリ・動画で後押し　とある不動産デベロッパーの台湾進出戦略",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news063.html",
+          "pubDate": "Fri, 27 Feb 2026 16:00:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "d04fb103baa9",
+          "title": "[ITmedia ビジネスオンライン] 「山田くんに100円振り込んで」話しかけるだけで完了　住信SBI銀行、5人の若手が内製したAIエージェントの裏側",
+          "link": "https://www.itmedia.co.jp/business/articles/2602/27/news096.html",
+          "pubDate": "Fri, 27 Feb 2026 15:56:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "db485b9633b1",
+          "title": "Xiaomiの「肺奥に届く微粒子にガチ対抗」する空気清浄機、5千円オフで過去最安",
+          "link": "https://www.gizmodo.jp/2026/02/amazon-timesale-2026-0227-2.html",
+          "pubDate": "Fri, 27 Feb 2026 15:55:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "18d5b5adc94e",
+          "title": "[ITmedia PC USER] XGIMI、ホームシアター向けの高性能4K対応DLPプロジェクター",
+          "link": "https://www.itmedia.co.jp/pcuser/articles/2602/27/news114.html",
+          "pubDate": "Fri, 27 Feb 2026 15:40:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "a3826e1d086d",
           "title": "『みそきん』は相変わらず人気なの？ 田舎のセブンでスタッフから聞いた意外な答え / 新商品の辛みそきんとも食べ比べてみた！",
           "link": "https://rocketnews24.com/2026/02/27/2653805/",
           "pubDate": "Fri, 27 Feb 2026 06:00:48 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "3559bce948b6",
+          "title": "サムスン新型イヤホン「Galaxy Buds4/Pro」正式発表。3月12日発売",
+          "link": "https://www.gizmodo.jp/2026/02/samsung-galaxy-buds4-pro-specs-price.html",
+          "pubDate": "Fri, 27 Feb 2026 15:00:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "2f3ab3fcb159",
+          "title": "[ITmedia Mobile] 「iPhoneのシェアの高いスマホ市場」に異変!?　ショップ店員に聞く「Androidスマホ人気」の実情",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news104.html",
+          "pubDate": "Fri, 27 Feb 2026 15:00:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "a0a5bdff9aa5",
+          "title": "AirTag（第2世代）は「音で発見力」アップ。過去最安は買い替え＆初導入チャンス",
+          "link": "https://www.gizmodo.jp/2026/02/amazon-timesale-2026-0227-1.html",
+          "pubDate": "Fri, 27 Feb 2026 14:55:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "937c460ef056",
+          "title": "モンベルの“2WAYで使えるグローブ”はごわつかずに快適。スマホの操作もスムーズ",
+          "link": "https://www.gizmodo.jp/2026/02/montbell_2way.html",
+          "pubDate": "Fri, 27 Feb 2026 14:35:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "1f975eda2316",
+          "title": "[ITmedia Mobile] auの「Galaxy S26」は2年実質7万円台から　MNPと機種変更で2万2000円の割引あり",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news110.html",
+          "pubDate": "Fri, 27 Feb 2026 14:24:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "9b475d36b941",
           "title": "【4コマ】魔王軍はホワイト企業 1913話目「病と変化㉓」",
           "link": "https://rocketnews24.com/2026/02/27/2651195/",
           "pubDate": "Fri, 27 Feb 2026 05:00:50 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "ab5d8940168d",
+          "title": "もう抜かない。この極小SSDはPCと一体化するから",
+          "link": "https://www.gizmodo.jp/2026/02/2602-amazon-short-iodata-slimssd-2-1-1-ira-2-5ha.html",
+          "pubDate": "Fri, 27 Feb 2026 13:55:00 +0900",
+          "source": "ギズモード"
+        },
+        {
+          "id": "297316f2d785",
+          "title": "[ITmedia Mobile] 楽天モバイルの「Galaxy S26」は2年3万円台から　最大1万ポイント還元も",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news109.html",
+          "pubDate": "Fri, 27 Feb 2026 13:53:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "5758d63c9d22",
+          "title": "[ITmedia Mobile] 楽天モバイルが「AQUOS sense10」「OPPO A5 5G」を値下げ　18歳以下は「nubia S2R」が新規1円に",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news092.html",
+          "pubDate": "Fri, 27 Feb 2026 13:30:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "3275efc790fa",
+          "title": "[ITmedia PC USER] DJIが同社初のロボット掃除機「ROMO」シリーズを投入",
+          "link": "https://www.itmedia.co.jp/pcuser/articles/2602/27/news105.html",
+          "pubDate": "Fri, 27 Feb 2026 13:21:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "010abbb536db",
+          "title": "[ITmedia News] Instagram、10代の“自傷検索”を保護者に自動通知へ",
+          "link": "https://www.itmedia.co.jp/news/articles/2602/27/news103.html",
+          "pubDate": "Fri, 27 Feb 2026 13:18:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "5791c7650a87",
+          "title": "[ITmedia Mobile] ソフトバンクの「Galaxy S26」は月1円／2年2万2024円から　S26 UltraもMNPなら1年3万円台から",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news101.html",
+          "pubDate": "Fri, 27 Feb 2026 13:00:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "7e37f1444af3",
+          "title": "[ITmedia Mobile] 大画面になった「HUAWEI Band 11」シリーズが3月13日に発売　単独で走行ルートを記録可能な「Pro」も",
+          "link": "https://www.itmedia.co.jp/mobile/articles/2602/27/news099.html",
+          "pubDate": "Fri, 27 Feb 2026 12:20:00 +0900",
+          "source": "ITmedia 総合"
+        },
+        {
+          "id": "916c61ba82b2",
           "title": "醤油ラーメン1杯99円！「魚べい」で平日17時まで販売されるラーメンの価格が2026年とは思えないので実際に確かめてきた",
           "link": "https://rocketnews24.com/2026/02/27/2714381/",
           "pubDate": "Fri, 27 Feb 2026 02:55:27 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "4145db890588",
           "title": "ファミマから「松屋監修 うまトマハンバーガー」が発売されたので食べてみた / 再現度と独自性の華麗なる両立",
           "link": "https://rocketnews24.com/2026/02/27/2698685/",
           "pubDate": "Fri, 27 Feb 2026 02:30:52 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "dab51b2854d7",
           "title": "池袋中華街のガチ中華ランチ食べ放題14軒を全制覇した私が選ぶ「高コスパおすすめ店7選」",
           "link": "https://rocketnews24.com/2026/02/27/2652895/",
           "pubDate": "Fri, 27 Feb 2026 02:00:01 +0000",
           "source": "ロケットニュース24"
         },
         {
+          "id": "c2b5a7f26748",
+          "title": "【価格破壊】予算1万円！ セカストで春服コーデに挑んでみた結果 / バーバリーも入ってお釣りが出た",
+          "link": "https://rocketnews24.com/2026/02/27/2646296/",
+          "pubDate": "Fri, 27 Feb 2026 01:00:46 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "c121ae5ca1b3",
+          "title": "【赤坂攻略】3700円の激安ゲストハウスに泊まって人気サウナで満足度を爆上げする作戦が最高だった",
+          "link": "https://rocketnews24.com/2026/02/27/2714388/",
+          "pubDate": "Fri, 27 Feb 2026 00:00:28 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "ec4597b3bdde",
+          "title": "本屋にちくわ!? 『紀文のおひるねちくわクッションBOOK』が重版も納得な最高の寝心地だった",
+          "link": "https://rocketnews24.com/2026/02/27/2698949/",
+          "pubDate": "Thu, 26 Feb 2026 23:00:57 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "d856e4172d23",
+          "title": "そういう情報いらん！ 海辺で知ったSOS！　四コマサボタージュBYD第310回「詳細」",
+          "link": "https://rocketnews24.com/2026/02/27/2649559/",
+          "pubDate": "Thu, 26 Feb 2026 22:00:43 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "865229c9c6bf",
+          "title": "ケニアの不人気レストラン（店名：楽しい時間）で聞いた「客が来ない本当の理由」が切なくてポテトの味がしなかった【カンバ通信：第445回】",
+          "link": "https://rocketnews24.com/2026/02/26/2698686/",
+          "pubDate": "Thu, 26 Feb 2026 09:00:22 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "7abce9540c90",
+          "title": "韓国人留学生が本気レビュー！ 本場の味に近い日本のおいしいキムチBEST3日本のキムチBEST3",
+          "link": "https://rocketnews24.com/2026/02/26/2698704/",
+          "pubDate": "Thu, 26 Feb 2026 07:00:43 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "dec5fe9ca8fa",
+          "title": "【1本50円】アイリスオーヤマの緑茶（500ml）24本セットが1190円！ ネット通販ハンター古沢が激推しする特売品10選 / Amazonタイムセール",
+          "link": "https://rocketnews24.com/2026/02/26/2714280/",
+          "pubDate": "Thu, 26 Feb 2026 06:30:38 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "b040baca752f",
+          "title": "「りくおじが売ってる！」と思い近寄ると…りくろーさんでもなければ、おじさんでもなかった件 / 正体は『ワンダおばさん』",
+          "link": "https://rocketnews24.com/2026/02/26/2653343/",
+          "pubDate": "Thu, 26 Feb 2026 06:00:16 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "0a9562f12cb3",
+          "title": "【4コマ】魔王軍はホワイト企業 1912話目「病と変化㉒」",
+          "link": "https://rocketnews24.com/2026/02/26/2651194/",
+          "pubDate": "Thu, 26 Feb 2026 05:00:53 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "1a78c3a9bb43",
+          "title": "炊飯器に放り込むだけ！ SNSで話題の「ヤクルト角煮」が想像の斜め上を行くウマさ → ヤクルトのポテンシャルに震えた",
+          "link": "https://rocketnews24.com/2026/02/26/2698486/",
+          "pubDate": "Thu, 26 Feb 2026 02:55:50 +0000",
+          "source": "ロケットニュース24"
+        },
+        {
+          "id": "9f1d6e46f3ad",
           "title": "京都市バス「二重価格」の賛否。市民200円、観光客は最大400円に",
           "link": "https://tabiris.com/archives/kyoto-bus-niju/",
           "pubDate": "Wed, 25 Feb 2026 21:39:06 +0000",
           "source": "タビリス"
         },
         {
+          "id": "61891962a1d3",
           "title": "JR四国「スマえき若者限定四国フリーきっぷ」26年度版の概要。3日間1.2万円",
           "link": "https://tabiris.com/archives/sumaeki2026/",
           "pubDate": "Wed, 25 Feb 2026 20:39:08 +0000",
           "source": "タビリス"
         },
         {
+          "id": "6ea39f4e57de",
           "title": "東急バス「溝の口～新横浜直行バス」3月末廃止。第三京浜経由の異色路線",
           "link": "https://tabiris.com/archives/mizoshin/",
           "pubDate": "Tue, 24 Feb 2026 23:35:08 +0000",
           "source": "タビリス"
         },
         {
+          "id": "1ded31363f87",
           "title": "北九州でオープントップバス運行開始。福岡では「太宰府コース」新設",
           "link": "https://tabiris.com/archives/kitakyushu-opentop/",
           "pubDate": "Mon, 23 Feb 2026 21:47:08 +0000",
           "source": "タビリス"
         },
         {
+          "id": "63c597bc6ff6",
           "title": "錦川鉄道、10年間存続が決定。「クロスセクター効果」を重視",
           "link": "https://tabiris.com/archives/nishikigawa202602/",
           "pubDate": "Fri, 20 Feb 2026 23:55:30 +0000",
           "source": "タビリス"
         },
         {
+          "id": "b728203884bc",
           "title": "JR東日本「JRE GO」の隠れた狙い。新幹線ネット予約を刷新へ",
           "link": "https://tabiris.com/archives/jrego202602/",
           "pubDate": "Fri, 20 Feb 2026 01:42:40 +0000",
           "source": "タビリス"
         },
         {
+          "id": "b662d5e68225",
           "title": "国際線が5,000円！　ピーチ「旅フェス」第3弾セールを2/20開催",
           "link": "https://tabiris.com/archives/peachsale20260220/",
           "pubDate": "Thu, 19 Feb 2026 23:30:53 +0000",
           "source": "タビリス"
         },
         {
+          "id": "47f2897b25e9",
           "title": "山梨交通「下教来石線」が廃止へ。「ローカル路線バスの旅」名路線が姿消す",
           "link": "https://tabiris.com/archives/shimokyoraishi/",
           "pubDate": "Thu, 19 Feb 2026 22:53:36 +0000",
           "source": "タビリス"
         },
         {
+          "id": "5c5472386783",
           "title": "美祢線BRT「専用道は無駄」の結論に。ローカル線で効果小さく",
           "link": "https://tabiris.com/archives/minesenbrt202602/",
           "pubDate": "Wed, 18 Feb 2026 23:46:57 +0000",
           "source": "タビリス"
         },
         {
+          "id": "d65eb63ea60a",
           "title": "神戸市バス「運転キロ23%減」の衝撃。26年度、減便と路線再編で",
           "link": "https://tabiris.com/archives/kobebus2026/",
           "pubDate": "Wed, 18 Feb 2026 00:57:14 +0000",
           "source": "タビリス"
+        },
+        {
+          "id": "90f0c3457f10",
+          "title": "平成筑豊鉄道、廃止議論で重大局面に。3市町村がバス転換を支持",
+          "link": "https://tabiris.com/archives/heichiku20260217/",
+          "pubDate": "Tue, 17 Feb 2026 02:08:04 +0000",
+          "source": "タビリス"
+        },
+        {
+          "id": "daa94d86f544",
+          "title": "広島電鉄「循環線」1日8本の衝撃。3/28開業、新系統なのに少なすぎて",
+          "link": "https://tabiris.com/archives/hiroden-junkansen/",
+          "pubDate": "Sun, 15 Feb 2026 21:47:33 +0000",
+          "source": "タビリス"
+        },
+        {
+          "id": "0f5d029bb940",
+          "title": "京都バス比良線廃止へ。「鯖街道」走る出町柳〜朽木学校前が運行終了",
+          "link": "https://tabiris.com/archives/hirasen-haishi/",
+          "pubDate": "Sun, 15 Feb 2026 00:34:45 +0000",
+          "source": "タビリス"
+        },
+        {
+          "id": "35a904089c2f",
+          "title": "富山地鉄「スーパーたてやま」新設。3月改正、北陸新幹線接続も強化",
+          "link": "https://tabiris.com/archives/super-tateyama/",
+          "pubDate": "Sat, 14 Feb 2026 21:45:00 +0000",
+          "source": "タビリス"
+        },
+        {
+          "id": "b8fce3409d4d",
+          "title": "「成田中速新幹線」が実現へ。京成スカイアクセス線、複々線化を検討",
+          "link": "https://tabiris.com/archives/narita-chusoku/",
+          "pubDate": "Fri, 13 Feb 2026 23:56:45 +0000",
+          "source": "タビリス"
         }
       ],
-      "lastUpdated": "2026-02-27T15:29:38.024Z"
+      "lastUpdated": "2026-02-27T16:56:45.662Z"
     },
-    "lastUpdated": "2026-02-27T15:29:38.024Z"
+    "lastUpdated": "2026-02-27T16:56:45.662Z"
   },
   "market": {
     "data": {
@@ -204,39 +724,39 @@
         "marketTime": "2026-02-27T06:45:03.000Z"
       },
       "sp500": {
-        "price": 6861.16,
-        "change": -47.699707,
-        "changePercent": -0.6904266,
+        "price": 6872.96,
+        "change": -35.899902,
+        "changePercent": -0.5196325,
         "currency": "USD",
         "symbol": "^GSPC",
         "name": "S&P 500",
-        "marketTime": "2026-02-27T15:30:08.000Z"
+        "marketTime": "2026-02-27T17:03:53.000Z"
       },
       "gold": {
-        "price": 5240.8,
-        "change": 46.59961,
-        "changePercent": 0.89714694,
+        "price": 5250.3,
+        "change": 56.09961,
+        "changePercent": 1.0800433,
         "currency": "USD",
         "symbol": "GC=F",
         "name": "Gold Apr 26",
-        "marketTime": "2026-02-27T15:20:07.000Z"
+        "marketTime": "2026-02-27T16:53:51.000Z"
       },
       "usdjpy": {
-        "price": 156.101,
-        "change": 0.011001587,
-        "changePercent": 0.007048143,
+        "price": 156.074,
+        "change": -0.015991211,
+        "changePercent": -0.010244932,
         "currency": "JPY",
         "symbol": "USDJPY=X",
         "name": "USD/JPY",
-        "marketTime": "2026-02-27T15:30:08.000Z"
+        "marketTime": "2026-02-27T17:03:53.000Z"
       }
     },
-    "lastUpdated": "2026-02-27T15:30:08.684Z"
+    "lastUpdated": "2026-02-27T17:03:53.922Z"
   },
   "weather": {
     "current": {
       "temp": 9.6,
-      "humidity": 97,
+      "humidity": 94,
       "weatherCode": 3
     },
     "daily": {
@@ -251,6 +771,6 @@
         "weatherCode": 1
       }
     },
-    "lastUpdated": "2026-02-27T15:28:23.681Z"
+    "lastUpdated": "2026-02-27T16:56:44.920Z"
   }
 }

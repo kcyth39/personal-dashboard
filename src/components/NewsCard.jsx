@@ -3,6 +3,26 @@ import { FaRegNewspaper, FaChartLine, FaArrowUp, FaArrowDown } from 'react-icons
 
 export default function NewsCard() {
     const [data, setData] = React.useState(null);
+    // 既読記事の管理
+    const [readArticles, setReadArticles] = React.useState(() => {
+        try {
+            const saved = localStorage.getItem('read_articles');
+            return saved ? JSON.parse(saved) : [];
+        } catch (e) {
+            return [];
+        }
+    });
+
+    const markAsRead = (id) => {
+        if (!id) return;
+        setReadArticles(prev => {
+            if (prev.includes(id)) return prev;
+            const newList = [...prev, id];
+            if (newList.length > 1000) newList.shift();
+            localStorage.setItem('read_articles', JSON.stringify(newList));
+            return newList;
+        });
+    };
 
     const fetchData = () => {
         fetch('/data/dashboard-data.json')
@@ -13,7 +33,6 @@ export default function NewsCard() {
 
     React.useEffect(() => {
         fetchData();
-        // 5分おきにデータの有無をチェック（スクリプト側で更新されているものを拾う）
         const timer = setInterval(fetchData, 5 * 60 * 1000);
         return () => clearInterval(timer);
     }, []);
@@ -31,6 +50,15 @@ export default function NewsCard() {
             </div>
         );
     }
+
+    // 既読を除外し、上位件数に絞る
+    const filteredTopNews = (data.news.top?.items || [])
+        .filter(item => !readArticles.includes(item.id))
+        .slice(0, 10);
+
+    const filteredRssNews = (data.news.rss?.items || [])
+        .filter(item => !readArticles.includes(item.id))
+        .slice(0, 20);
 
     return (
         <div className="glass-panel p-6 rounded-2xl flex flex-col h-full overflow-hidden">
@@ -85,12 +113,13 @@ export default function NewsCard() {
                         </span>
                     </div>
                     <div className="flex-1 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
-                        {data.news.top?.items?.map((news, idx) => (
+                        {filteredTopNews.map((news) => (
                             <a
-                                key={idx}
+                                key={news.id}
                                 href={news.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={() => markAsRead(news.id)}
                                 className="group block p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-white/10 dark:bg-slate-800/10"
                             >
                                 <h3 className="text-sm font-medium leading-snug line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors uppercase-first-letter">
@@ -106,7 +135,7 @@ export default function NewsCard() {
                     </div>
                 </div>
 
-                {/* Column 2: RSS Reader */}
+                {/* Column 2: RSS Feed */}
                 <div className="flex flex-col min-h-0 overflow-hidden">
                     <div className="flex items-center justify-between mb-4">
                         <div className="flex items-center space-x-3">
@@ -118,12 +147,13 @@ export default function NewsCard() {
                         </span>
                     </div>
                     <div className="flex-1 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
-                        {data.news.rss?.items?.map((news, idx) => (
+                        {filteredRssNews.map((news) => (
                             <a
-                                key={idx}
+                                key={news.id}
                                 href={news.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                onClick={() => markAsRead(news.id)}
                                 className="group block p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-white/10 dark:bg-slate-800/10"
                             >
                                 <div className="flex items-center space-x-2 mb-1">
@@ -139,7 +169,7 @@ export default function NewsCard() {
                                 </span>
                             </a>
                         ))}
-                        {(!data.news.rss?.items || data.news.rss?.items.length === 0) && (
+                        {filteredRssNews.length === 0 && (
                             <div className="flex flex-col items-center justify-center h-full text-gray-400 py-10">
                                 <p className="text-xs">No RSS items found</p>
                             </div>
