@@ -1,19 +1,24 @@
 {
     "links": [
         {
-            "name": "Workspace",
-            "url": "#",
-            "icon": "💼"
+            "name": "Notion",
+            "url": "https://www.notion.so/",
+            "icon": "📝"
         },
         {
-            "name": "Portfolio",
-            "url": "#",
-            "icon": "📈"
+            "name": "MoneyForward",
+            "url": "https://moneyforward.com/",
+            "icon": "📊"
         },
         {
-            "name": "Mail",
-            "url": "#",
-            "icon": "✉️"
+            "name": "note",
+            "url": "https://note.com/",
+            "icon": "🖋️"
+        },
+        {
+            "name": "Google Maps",
+            "url": "https://www.google.com/maps?authuser=0",
+            "icon": "📍"
         }
     ],
     "tips": [
