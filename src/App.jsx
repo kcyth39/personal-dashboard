@@ -5,6 +5,7 @@ import LinksCard from './components/LinksCard';
 import TipsCard from './components/TipsCard';
 import WeatherCard from './components/WeatherCard';
 import CustomWeatherCard from './components/CustomWeatherCard';
+import GeminiChatBox from './components/GeminiChatBox';
 
 function App() {
   const [time, setTime] = React.useState(new Date());
@@ -97,8 +98,9 @@ function App() {
             <LinksCard />
           </div>
 
-          {/* Tips Section (Bottom) */}
-          <div className="md:col-span-12 mt-4">
+          {/* Gemini Chat & Tips Section (Bottom) */}
+          <div className="md:col-span-12 mt-6 flex flex-col gap-6">
+            <GeminiChatBox />
             <TipsCard />
           </div>
         </div>
