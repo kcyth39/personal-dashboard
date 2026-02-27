@@ -24,6 +24,8 @@ export default function LinksCard() {
                         <a
                             key={idx}
                             href={link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="flex items-center space-x-2 p-3 rounded-xl bg-white/50 hover:bg-white/80 dark:bg-slate-800/50 dark:hover:bg-slate-700/80 transition-colors border border-gray-100 dark:border-gray-700"
                         >
                             <span>{link.icon}</span>

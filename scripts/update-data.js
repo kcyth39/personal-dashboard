@@ -89,7 +89,8 @@ async function fetchMarket() {
                 changePercent: quote.regularMarketChangePercent,
                 currency: quote.currency,
                 symbol: quote.symbol,
-                name: quote.shortName || symbol
+                name: quote.shortName || symbol,
+                marketTime: quote.regularMarketTime ? new Date(quote.regularMarketTime).toISOString() : now
             };
         } catch (error) {
             console.error(`Error fetching ${symbol}:`, error.message);

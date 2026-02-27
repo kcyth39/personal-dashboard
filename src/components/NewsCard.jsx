@@ -48,16 +48,16 @@ export default function NewsCard() {
                             <a href="https://www.sbisec.co.jp/ETGate/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-colors">SBI</a>
                         </div>
                     </div>
-                    <span className="text-xs text-gray-400 bg-white/50 dark:bg-gray-800 px-2 py-1 rounded-full border border-gray-100 dark:border-gray-700">
-                        {formatTime(data.market.lastUpdated)} 更新
-                    </span>
                 </div>
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     {Object.entries(data.market.data).map(([key, item]) => {
                         const isUp = item.change >= 0;
                         return (
                             <div key={key} className="bg-white/30 dark:bg-slate-800/30 p-3 rounded-xl border border-white/20 dark:border-gray-700 shadow-sm">
-                                <div className="text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 mb-1 font-semibold">{item.name}</div>
+                                <div className="flex justify-between items-start mb-1">
+                                    <div className="text-[10px] uppercase tracking-wider text-gray-500 dark:text-gray-400 font-semibold">{item.name}</div>
+                                    <div className="text-[9px] text-gray-400 font-medium">{formatTime(item.marketTime)}</div>
+                                </div>
                                 <div className="text-lg font-black leading-tight tracking-tight">
                                     {item.price.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                 </div>
