@@ -1,5 +1,5 @@
 import React from 'react';
-import { FaRegNewspaper, FaChartLine, FaArrowUp, FaArrowDown } from 'react-icons/fa';
+import { FaRegNewspaper, FaChartLine, FaArrowUp, FaArrowDown, FaTrashAlt } from 'react-icons/fa';
 
 export default function NewsCard() {
     const [data, setData] = React.useState(null);
@@ -22,6 +22,12 @@ export default function NewsCard() {
             localStorage.setItem('read_articles', JSON.stringify(newList));
             return newList;
         });
+    };
+
+    const dismissArticle = (e, id) => {
+        e.preventDefault();
+        e.stopPropagation();
+        markAsRead(id);
     };
 
     const fetchData = () => {
@@ -71,7 +77,7 @@ export default function NewsCard() {
                         <div className="hidden sm:flex items-center space-x-3 ml-4">
                             <a href="https://www.nikkei.com/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-colors">NIKKEI</a>
                             <span className="text-gray-300 dark:text-gray-600">|</span>
-                            <a href="https://shikiho.toyokeizai.net/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-colors">四季報</a>
+                            <a href="https://shikiho.toyokeizai.net/mypage/0" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-colors">四季報</a>
                             <span className="text-gray-300 dark:text-gray-600">|</span>
                             <a href="https://www.sbisec.co.jp/ETGate/" target="_blank" rel="noopener noreferrer" className="text-sm text-blue-500 hover:text-blue-600 dark:hover:text-blue-400 font-bold transition-colors">SBI</a>
                         </div>
@@ -114,23 +120,31 @@ export default function NewsCard() {
                     </div>
                     <div className="flex-1 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
                         {filteredTopNews.map((news) => (
-                            <a
-                                key={news.id}
-                                href={news.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => markAsRead(news.id)}
-                                className="group block p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-white/10 dark:bg-slate-800/10"
-                            >
-                                <h3 className="text-sm font-medium leading-snug line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors uppercase-first-letter">
-                                    {news.title}
-                                </h3>
-                                <div className="flex justify-between items-center mt-2">
-                                    <span className="text-[10px] text-gray-400">
-                                        {new Date(news.pubDate).toLocaleString('ja-JP', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                                    </span>
-                                </div>
-                            </a>
+                            <div key={news.id} className="group relative p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-white/10 dark:bg-slate-800/10">
+                                <a
+                                    href={news.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => markAsRead(news.id)}
+                                    className="block pr-6"
+                                >
+                                    <h3 className="text-sm font-medium leading-snug line-clamp-2 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors uppercase-first-letter">
+                                        {news.title}
+                                    </h3>
+                                    <div className="flex justify-between items-center mt-2">
+                                        <span className="text-[10px] text-gray-400">
+                                            {new Date(news.pubDate).toLocaleString('ja-JP', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
+                                        </span>
+                                    </div>
+                                </a>
+                                <button
+                                    onClick={(e) => dismissArticle(e, news.id)}
+                                    className="absolute top-3 right-3 p-1 rounded-md text-gray-300 dark:text-gray-600 opacity-0 group-hover:opacity-100 hover:!text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-900/30 transition-all"
+                                    title="この記事を非表示"
+                                >
+                                    <FaTrashAlt className="text-[10px]" />
+                                </button>
+                            </div>
                         ))}
                     </div>
                 </div>
@@ -148,26 +162,34 @@ export default function NewsCard() {
                     </div>
                     <div className="flex-1 overflow-y-auto pr-2 space-y-2 custom-scrollbar">
                         {filteredRssNews.map((news) => (
-                            <a
-                                key={news.id}
-                                href={news.link}
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                onClick={() => markAsRead(news.id)}
-                                className="group block p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-white/10 dark:bg-slate-800/10"
-                            >
-                                <div className="flex items-center space-x-2 mb-1">
-                                    <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 uppercase tracking-tighter">
-                                        {news.source}
+                            <div key={news.id} className="group relative p-3 rounded-xl hover:bg-white/60 dark:hover:bg-slate-800/60 transition-all border border-transparent hover:border-gray-200 dark:hover:border-gray-700 bg-white/10 dark:bg-slate-800/10">
+                                <a
+                                    href={news.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    onClick={() => markAsRead(news.id)}
+                                    className="block pr-6"
+                                >
+                                    <div className="flex items-center space-x-2 mb-1">
+                                        <span className="text-[9px] font-bold px-1.5 py-0.5 rounded bg-blue-100 dark:bg-blue-900/40 text-blue-600 dark:text-blue-300 uppercase tracking-tighter">
+                                            {news.source}
+                                        </span>
+                                    </div>
+                                    <h3 className="text-sm font-medium leading-snug line-clamp-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                                        {news.title}
+                                    </h3>
+                                    <span className="text-[10px] text-gray-400 mt-2 block">
+                                        {new Date(news.pubDate).toLocaleString('ja-JP', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
                                     </span>
-                                </div>
-                                <h3 className="text-sm font-medium leading-snug line-clamp-2 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
-                                    {news.title}
-                                </h3>
-                                <span className="text-[10px] text-gray-400 mt-2 block">
-                                    {new Date(news.pubDate).toLocaleString('ja-JP', { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit' })}
-                                </span>
-                            </a>
+                                </a>
+                                <button
+                                    onClick={(e) => dismissArticle(e, news.id)}
+                                    className="absolute top-3 right-3 p-1 rounded-md text-gray-300 dark:text-gray-600 opacity-0 group-hover:opacity-100 hover:!text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-900/30 transition-all"
+                                    title="この記事を非表示"
+                                >
+                                    <FaTrashAlt className="text-[10px]" />
+                                </button>
+                            </div>
                         ))}
                         {filteredRssNews.length === 0 && (
                             <div className="flex flex-col items-center justify-center h-full text-gray-400 py-10">

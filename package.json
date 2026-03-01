@@ -7,7 +7,11 @@
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "update-data": "node scripts/update-data.js",
+    "service:install": "mkdir -p logs && cp scripts/com.shige.personal-dashboard.plist ~/Library/LaunchAgents/ && launchctl load ~/Library/LaunchAgents/com.shige.personal-dashboard.plist && echo '✅ LaunchAgent installed and started'",
+    "service:uninstall": "launchctl unload ~/Library/LaunchAgents/com.shige.personal-dashboard.plist 2>/dev/null; rm -f ~/Library/LaunchAgents/com.shige.personal-dashboard.plist && echo '✅ LaunchAgent removed'",
+    "service:status": "launchctl list | grep personal-dashboard || echo '❌ LaunchAgent is not running'"
   },
   "dependencies": {
     "react": "^19.2.0",
