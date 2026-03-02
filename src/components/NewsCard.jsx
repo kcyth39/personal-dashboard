@@ -3,22 +3,40 @@ import { FaRegNewspaper, FaChartLine, FaArrowUp, FaArrowDown, FaTrashAlt } from 
 
 export default function NewsCard() {
     const [data, setData] = React.useState(null);
-    // 既読記事の管理
+    // 既読記事の管理（タイムスタンプ付き、5日で自動期限切れ）
+    const EXPIRY_DAYS = 5;
     const [readArticles, setReadArticles] = React.useState(() => {
         try {
             const saved = localStorage.getItem('read_articles');
-            return saved ? JSON.parse(saved) : [];
+            if (!saved) return [];
+            const parsed = JSON.parse(saved);
+            const now = Date.now();
+            const expiryMs = EXPIRY_DAYS * 24 * 60 * 60 * 1000;
+            // 旧形式（文字列配列）からの移行対応
+            if (parsed.length > 0 && typeof parsed[0] === 'string') {
+                const migrated = parsed.map(id => ({ id, at: now }));
+                localStorage.setItem('read_articles', JSON.stringify(migrated));
+                return migrated;
+            }
+            // 期限切れエントリを除去
+            const valid = parsed.filter(entry => (now - entry.at) < expiryMs);
+            if (valid.length !== parsed.length) {
+                localStorage.setItem('read_articles', JSON.stringify(valid));
+            }
+            return valid;
         } catch (e) {
             return [];
         }
     });
 
+    // 高速ルックアップ用のSetを生成
+    const readIds = React.useMemo(() => new Set(readArticles.map(e => e.id)), [readArticles]);
+
     const markAsRead = (id) => {
         if (!id) return;
         setReadArticles(prev => {
-            if (prev.includes(id)) return prev;
-            const newList = [...prev, id];
-            if (newList.length > 1000) newList.shift();
+            if (prev.some(e => e.id === id)) return prev;
+            const newList = [...prev, { id, at: Date.now() }];
             localStorage.setItem('read_articles', JSON.stringify(newList));
             return newList;
         });
@@ -59,11 +77,11 @@ export default function NewsCard() {
 
     // 既読を除外し、上位件数に絞る
     const filteredTopNews = (data.news.top?.items || [])
-        .filter(item => !readArticles.includes(item.id))
+        .filter(item => !readIds.has(item.id))
         .slice(0, 10);
 
     const filteredRssNews = (data.news.rss?.items || [])
-        .filter(item => !readArticles.includes(item.id))
+        .filter(item => !readIds.has(item.id))
         .slice(0, 20);
 
     return (
@@ -139,7 +157,7 @@ export default function NewsCard() {
                                 </a>
                                 <button
                                     onClick={(e) => dismissArticle(e, news.id)}
-                                    className="absolute top-3 right-3 p-1 rounded-md text-gray-300 dark:text-gray-600 opacity-0 group-hover:opacity-100 hover:!text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-900/30 transition-all"
+                                    className="absolute top-3 right-3 p-1 rounded-md text-gray-400 dark:text-gray-500 hover:text-rose-400 hover:bg-rose-50 dark:hover:bg-rose-900/30 transition-all"
                                     title="この記事を非表示"
                                 >
                                     <FaTrashAlt className="text-[10px]" />

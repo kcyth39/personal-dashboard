@@ -6,7 +6,7 @@
             "icon": "📝"
         },
         {
-            "name": "MoneyForward",
+            "name": "マネーフォワード",
             "url": "https://moneyforward.com/",
             "icon": "📊"
         },
@@ -21,17 +21,10 @@
             "icon": "📍"
         }
     ],
-    "tips": [
-        "MacのSpotlight (Cmd + Space) を電卓代わりに使えます。",
-        "Optionキーを押しながらWi-Fiアイコンをクリックすると詳細情報が見られます。",
-        "水を飲むのを忘れないでくださいね💧",
-        "ブラウザタブは Cmd + Shift + T で閉じたものを復活できます。",
-        "Cmd + Shift + 4 の後に Spaceキー を押すと選択したウィンドウだけをスクショできます。"
-    ],
     "location": {
-        "name": "大阪",
-        "lat": 34.6937,
-        "lon": 135.5023
+        "name": "大阪市",
+        "lat": 34.69379,
+        "lon": 135.50107
     },
     "rssFeeds": [
         {

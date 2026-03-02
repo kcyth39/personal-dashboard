@@ -6,9 +6,12 @@ import TipsCard from './components/TipsCard';
 import WeatherCard from './components/WeatherCard';
 import CustomWeatherCard from './components/CustomWeatherCard';
 import GeminiChatBox from './components/GeminiChatBox';
+import SettingsModal from './components/SettingsModal';
+import { FaCog } from 'react-icons/fa';
 
 function App() {
   const [time, setTime] = React.useState(new Date());
+  const [isSettingsOpen, setIsSettingsOpen] = React.useState(false);
 
   React.useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000);
@@ -74,13 +77,22 @@ function App() {
       <div className="absolute inset-0 bg-black/20 pointer-events-none backdrop-blur-[2px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <header className="mb-12 text-center md:text-left">
-          <h1 className="text-5xl font-black text-white drop-shadow-lg mb-4 leading-tight">
-            {getGreeting()}
-          </h1>
-          <p className="text-2xl font-medium text-white/90 drop-shadow-md">
-            現在、大阪は {timeString} です。良い一日を。
-          </p>
+        <header className="mb-12 flex justify-between items-start md:text-left text-center flex-col md:flex-row gap-6">
+          <div>
+            <h1 className="text-5xl font-black text-white drop-shadow-lg mb-4 leading-tight">
+              {getGreeting()}
+            </h1>
+            <p className="text-2xl font-medium text-white/90 drop-shadow-md">
+              現在、大阪は {timeString} です。良い一日を。
+            </p>
+          </div>
+          <button
+            onClick={() => setIsSettingsOpen(true)}
+            className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all shadow-lg hover:shadow-xl border border-white/20 group self-center md:self-start"
+            title="Settings"
+          >
+            <FaCog className="text-2xl group-hover:rotate-90 transition-transform duration-300" />
+          </button>
         </header>
 
         {/* Main Grid Layout */}
@@ -90,21 +102,24 @@ function App() {
             <NewsCard />
           </div>
 
-          {/* Right Column: Weather, Calendar, Links */}
+          {/* Right Column: Insights, Weather, Calendar, Links */}
           <div className="md:col-span-4 flex flex-col gap-4">
+            <TipsCard />
             <WeatherCard />
             <CustomWeatherCard />
             <CalendarCard />
             <LinksCard />
           </div>
 
-          {/* Gemini Chat & Tips Section (Bottom) */}
+          {/* Gemini Chat Section (Bottom) */}
           <div className="md:col-span-12 mt-6 flex flex-col gap-6">
             <GeminiChatBox />
-            <TipsCard />
           </div>
         </div>
       </div>
+
+      {/* Settings Modal */}
+      <SettingsModal isOpen={isSettingsOpen} onClose={() => setIsSettingsOpen(false)} />
     </div>
   );
 }

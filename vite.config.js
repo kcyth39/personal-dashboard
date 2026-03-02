@@ -1,6 +1,8 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { spawn } from 'child_process'
+import fs from 'fs'
+import path from 'path'
 
 import tailwindcss from '@tailwindcss/vite'
 
@@ -34,10 +36,45 @@ function dataUpdaterPlugin() {
   };
 }
 
+// 設定ファイル保存用プラグイン
+function configApiPlugin() {
+  return {
+    name: 'config-api',
+    configureServer(server) {
+      server.middlewares.use('/api/config', (req, res, next) => {
+        if (req.method === 'POST') {
+          let body = '';
+          req.on('data', chunk => {
+            body += chunk.toString();
+          });
+          req.on('end', () => {
+            try {
+              const newConfig = JSON.parse(body);
+              const configPath = path.resolve(process.cwd(), 'public/data/dashboard-config.json');
+              fs.writeFileSync(configPath, JSON.stringify(newConfig, null, 4), 'utf-8');
+              res.setHeader('Content-Type', 'application/json');
+              res.statusCode = 200;
+              res.end(JSON.stringify({ success: true }));
+            } catch (e) {
+              res.setHeader('Content-Type', 'application/json');
+              res.statusCode = 500;
+              res.end(JSON.stringify({ success: false, error: e.message }));
+            }
+          });
+        } else {
+          next();
+        }
+      });
+    }
+  };
+}
+
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), dataUpdaterPlugin()],
+  plugins: [react(), tailwindcss(), dataUpdaterPlugin(), configApiPlugin()],
   server: {
+    port: 5173,
+    strictPort: true,
     watch: {
       ignored: ['**/public/data/**']
     }
