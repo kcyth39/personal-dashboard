@@ -58,10 +58,16 @@ function App() {
 
   // Get Background Image based on time
   const getBackgroundImage = () => {
-    if (hour >= 5 && hour < 11) return 'url("/images/morning.png")';
-    if (hour >= 11 && hour < 18) return 'url("/images/afternoon.png")';
-    if (hour >= 18 || hour < 0) return 'url("/images/night.png")'; // 18-24
-    return 'url("/images/midnight.png")'; // 0-5
+    // 5:00 - 9:00 は以前の「昼間の壁紙」であった afternoon.png を朝用に使用
+    if (hour >= 5 && hour < 9) return 'url("/images/afternoon.png")';
+    // 9:00 - 13:00 白樺の林
+    if (hour >= 9 && hour < 13) return 'url("/images/bg-birch-forest.png")';
+    // 13:00 - 17:00 山の景色
+    if (hour >= 13 && hour < 17) return 'url("/images/bg-mountain-view.png")';
+    // 17:00 - 22:00 夜
+    if (hour >= 17 && hour < 22) return 'url("/images/night.png")';
+    // 22:00 - 05:00 深夜
+    return 'url("/images/midnight.png")';
   };
 
   const timeString = time.toLocaleTimeString('ja-JP', {

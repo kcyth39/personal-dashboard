@@ -6,7 +6,7 @@
             "icon": "📝"
         },
         {
-            "name": "マネーフォワード",
+            "name": "Money Forward",
             "url": "https://moneyforward.com/",
             "icon": "📊"
         },
@@ -19,6 +19,11 @@
             "name": "Google Maps",
             "url": "https://www.google.com/maps?authuser=0",
             "icon": "📍"
+        },
+        {
+            "name": "Notebook LM",
+            "url": "https://notebooklm.google.com/",
+            "icon": "🔗"
         }
     ],
     "location": {
