@@ -5,8 +5,35 @@ export default function TipsCard() {
     const [tips, setTips] = useState([]);
     const [currentHour, setCurrentHour] = useState(new Date().getHours());
     const [currentIndex, setCurrentIndex] = useState(0);
-    const [isDismissed, setIsDismissed] = useState(false);
-    const [lastPeriod, setLastPeriod] = useState('');
+
+    const [currentPeriod, setCurrentPeriod] = useState(() => {
+        const hour = new Date().getHours();
+        const morning = hour >= 4 && hour < 12;
+        const evening = hour >= 22 || hour < 2;
+        return morning ? 'morning' : evening ? 'evening' : 'other';
+    });
+
+    const [isDismissed, setIsDismissed] = useState(() => {
+        const savedPeriod = localStorage.getItem('diaryCompletedPeriod');
+        const savedDate = localStorage.getItem('diaryCompletedDate');
+
+        // 現時刻における論理的な「今日」の日付文字列を生成する関数
+        const getLogicalDateStr = () => {
+            const now = new Date();
+            // 0:00 - 1:59 の間は、前日の夜として扱うために日付を1日戻した文字列にする
+            if (now.getHours() < 2) {
+                const yesterday = new Date(now);
+                yesterday.setDate(now.getDate() - 1);
+                return yesterday.toDateString();
+            }
+            return now.toDateString();
+        };
+
+        const hour = new Date().getHours();
+        const period = (hour >= 4 && hour < 12) ? 'morning' : (hour >= 22 || hour < 2) ? 'evening' : 'other';
+
+        return savedDate === getLogicalDateStr() && savedPeriod === period;
+    });
 
     useEffect(() => {
         fetch('/data/gemini-insights.json')
@@ -21,8 +48,20 @@ export default function TipsCard() {
         if (tips.length === 0) return;
 
         const updateState = () => {
-            setCurrentHour(new Date().getHours());
+            const hour = new Date().getHours();
+            setCurrentHour(hour);
             setCurrentIndex(Math.floor(Date.now() / (1000 * 60 * 60)) % tips.length);
+
+            const morning = hour >= 4 && hour < 12;
+            const evening = hour >= 22 || hour < 2;
+            const newPeriod = morning ? 'morning' : evening ? 'evening' : 'other';
+
+            setCurrentPeriod(prevPeriod => {
+                if (prevPeriod !== newPeriod) {
+                    setIsDismissed(false); // 期間が変わったらリセット
+                }
+                return newPeriod;
+            });
         };
 
         updateState(); // Initialize
@@ -36,14 +75,21 @@ export default function TipsCard() {
     const isMorning = currentHour >= 4 && currentHour < 12;
     const isEvening = currentHour >= 22 || currentHour < 2;
 
-    // 時間帯が変わったらdismiss状態をリセット
-    const currentPeriod = isMorning ? 'morning' : isEvening ? 'evening' : 'other';
-    useEffect(() => {
-        if (currentPeriod !== lastPeriod) {
-            setIsDismissed(false);
-            setLastPeriod(currentPeriod);
+
+
+    const handleDismiss = () => {
+        setIsDismissed(true);
+        localStorage.setItem('diaryCompletedPeriod', currentPeriod);
+
+        const now = new Date();
+        if (now.getHours() < 2) {
+            const yesterday = new Date(now);
+            yesterday.setDate(now.getDate() - 1);
+            localStorage.setItem('diaryCompletedDate', yesterday.toDateString());
+        } else {
+            localStorage.setItem('diaryCompletedDate', now.toDateString());
         }
-    }, [currentPeriod, lastPeriod]);
+    };
 
     if (isMorning && !isDismissed) {
         return (
@@ -69,7 +115,7 @@ export default function TipsCard() {
                         </li>
                     </ul>
                     <button
-                        onClick={() => setIsDismissed(true)}
+                        onClick={handleDismiss}
                         className="mt-4 flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-orange-100 hover:bg-orange-200 dark:bg-orange-900/30 dark:hover:bg-orange-900/50 text-orange-700 dark:text-orange-300 text-sm font-medium transition-colors"
                     >
                         <FaCheck className="text-xs" /> Done!
@@ -103,10 +149,10 @@ export default function TipsCard() {
                         </li>
                     </ul>
                     <button
-                        onClick={() => setIsDismissed(true)}
+                        onClick={handleDismiss}
                         className="mt-4 flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-sm font-medium transition-colors"
                     >
-                        <FaCheck className="text-xs" /> 書き終わった
+                        <FaCheck className="text-xs" /> Done!
                     </button>
                 </div>
             </div>

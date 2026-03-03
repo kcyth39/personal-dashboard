@@ -24,7 +24,7 @@ export default function NewsCard() {
                 localStorage.setItem('read_articles', JSON.stringify(valid));
             }
             return valid;
-        } catch (e) {
+        } catch {
             return [];
         }
     });
@@ -49,7 +49,7 @@ export default function NewsCard() {
     };
 
     const fetchData = () => {
-        fetch('/data/dashboard-data.json')
+        fetch(`/data/dashboard-data.json?t=${Date.now()}`)
             .then(res => res.json())
             .then(json => setData(json))
             .catch(err => console.error('Failed to load news/market data:', err));
