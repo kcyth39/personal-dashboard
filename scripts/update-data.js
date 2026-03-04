@@ -7,6 +7,16 @@ import YahooFinance from 'yahoo-finance2';
 
 const yahooFinance = new YahooFinance();
 
+// タイムアウト付きPromiseラッパー
+function withTimeout(promise, ms, label = 'operation') {
+    return Promise.race([
+        promise,
+        new Promise((_, reject) =>
+            setTimeout(() => reject(new Error(`${label} timed out after ${ms}ms`)), ms)
+        )
+    ]);
+}
+
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -120,7 +130,11 @@ async function fetchMarket() {
 
     for (const [key, symbol] of Object.entries(symbols)) {
         try {
-            const quote = await yahooFinance.quote(symbol);
+            const quote = await withTimeout(
+                yahooFinance.quote(symbol),
+                10000,
+                `fetch ${symbol}`
+            );
             results[key] = {
                 price: quote.regularMarketPrice,
                 change: quote.regularMarketChange,
@@ -143,6 +157,14 @@ async function fetchMarket() {
 
 // データ保存関数
 async function updateData() {
+    try {
+        await withTimeout(_updateDataInner(), 60000, 'updateData');
+    } catch (error) {
+        console.error(`[${new Date().toLocaleTimeString()}] Update cycle failed:`, error.message);
+    }
+}
+
+async function _updateDataInner() {
     if (!fs.existsSync(DATA_DIR)) {
         fs.mkdirSync(DATA_DIR, { recursive: true });
     }
