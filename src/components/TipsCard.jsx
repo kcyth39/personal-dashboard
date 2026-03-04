@@ -93,33 +93,44 @@ export default function TipsCard() {
 
     if (isMorning && !isDismissed) {
         return (
-            <div className="glass-panel p-5 md:p-6 rounded-2xl flex flex-col h-full bg-gradient-to-br from-amber-50 to-orange-50 dark:from-yellow-900/20 dark:to-orange-900/20 border border-orange-100/50 dark:border-orange-800/30">
-                <div className="flex items-center space-x-3 mb-4">
-                    <FaSun className="text-orange-500 text-2xl" />
-                    <h2 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-orange-500 to-amber-600">6-Minute Diary</h2>
-                </div>
-                <div className="flex-1 flex flex-col justify-center p-5 md:p-6 bg-white/50 dark:bg-black/20 rounded-xl text-gray-800 dark:text-gray-200 shadow-inner">
-                    <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-4 font-bold tracking-wider">MORNING (朝の3項目)</p>
-                    <ul className="space-y-4 font-medium text-sm md:text-base">
-                        <li className="flex items-start gap-3">
-                            <span className="bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300 w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs shadow-sm">1</span>
-                            <span>私がいま感謝しているのは・・・</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300 w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs shadow-sm">2</span>
-                            <span>今日を素晴らしい１日にするために、何をする？</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="bg-orange-100 dark:bg-orange-900/50 text-orange-700 dark:text-orange-300 w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs shadow-sm">3</span>
-                            <span>肯定的なアファメーション</span>
-                        </li>
-                    </ul>
-                    <button
-                        onClick={handleDismiss}
-                        className="mt-4 flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-orange-100 hover:bg-orange-200 dark:bg-orange-900/30 dark:hover:bg-orange-900/50 text-orange-700 dark:text-orange-300 text-sm font-medium transition-colors"
-                    >
-                        <FaCheck className="text-xs" /> Done!
-                    </button>
+            <div className="relative p-5 md:p-6 flex flex-col h-full bg-[#fcfbfa] dark:bg-[#2b2a27] border border-[#e8e4db] dark:border-[#403e39] shadow-sm rounded-sm overflow-hidden font-serif">
+                {/* Paper Texture Overlay */}
+                <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.03] pointer-events-none mix-blend-multiply dark:mix-blend-screen" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}></div>
+
+                <div className="relative z-10 flex flex-col h-full text-[#4a4540] dark:text-[#d4cfc7]">
+                    <div className="flex items-center justify-between mb-4 border-b border-[#e8e4db] dark:border-[#403e39] pb-2">
+                        <div className="flex items-center space-x-2">
+                            <FaSun className="text-[#a67c52] dark:text-[#c49a6c] text-xl" />
+                            <h2 className="text-2xl font-bold font-['Caveat',_cursive] text-[#5c4f42] dark:text-[#bba995]">6-Minute Diary</h2>
+                        </div>
+                        <span className="text-xs tracking-widest text-[#8c8273] dark:text-[#8a8071] font-sans font-bold">MORNING</span>
+                    </div>
+
+                    <div className="flex-1 flex flex-col justify-start pt-2">
+                        <ul className="space-y-6 text-[15px] leading-relaxed">
+                            <li className="flex items-start gap-3">
+                                <span className="font-['Caveat',_cursive] text-2xl text-[#a67c52] dark:text-[#c49a6c] leading-none pt-0.5">1.</span>
+                                <span className="flex-1 border-b border-dashed border-[#d1ccc0] dark:border-[#5a554f] pb-1">私がいま感謝しているのは・・・</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="font-['Caveat',_cursive] text-2xl text-[#a67c52] dark:text-[#c49a6c] leading-none pt-0.5">2.</span>
+                                <span className="flex-1 border-b border-dashed border-[#d1ccc0] dark:border-[#5a554f] pb-1">今日を素晴らしい１日にするために、何をする？</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="font-['Caveat',_cursive] text-2xl text-[#a67c52] dark:text-[#c49a6c] leading-none pt-0.5">3.</span>
+                                <span className="flex-1 border-b border-dashed border-[#d1ccc0] dark:border-[#5a554f] pb-1">肯定的なアファメーション</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="mt-auto pt-6 flex justify-end">
+                        <button
+                            onClick={handleDismiss}
+                            className="group flex items-center justify-center gap-2 px-6 py-1.5 rounded-sm border-2 border-[#a67c52] dark:border-[#c49a6c] text-[#a67c52] dark:text-[#c49a6c] hover:bg-[#a67c52] hover:text-[#fcfbfa] dark:hover:bg-[#c49a6c] dark:hover:text-[#2b2a27] font-['Caveat',_cursive] text-2xl transition-all shadow-[2px_2px_0px_#d1ccc0] dark:shadow-[2px_2px_0px_#5a554f] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                        >
+                            Done! <FaCheck className="text-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                    </div>
                 </div>
             </div>
         );
@@ -127,33 +138,44 @@ export default function TipsCard() {
 
     if (isEvening && !isDismissed) {
         return (
-            <div className="glass-panel p-5 md:p-6 rounded-2xl flex flex-col h-full bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-blue-900/20 dark:to-indigo-900/20 border border-blue-100/50 dark:border-blue-800/30">
-                <div className="flex items-center space-x-3 mb-4">
-                    <FaMoon className="text-blue-500 text-2xl" />
-                    <h2 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-indigo-600">6-Minute Diary</h2>
-                </div>
-                <div className="flex-1 flex flex-col justify-center p-5 md:p-6 bg-white/50 dark:bg-black/20 rounded-xl text-gray-800 dark:text-gray-200 shadow-inner">
-                    <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 mb-4 font-bold tracking-wider">EVENING (夜の3項目)</p>
-                    <ul className="space-y-4 font-medium text-sm md:text-base">
-                        <li className="flex items-start gap-3">
-                            <span className="bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs shadow-sm">1</span>
-                            <span>今日は誰にどんな良いことをしてあげた？</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs shadow-sm">2</span>
-                            <span>明日を良い日にするために、何をする？</span>
-                        </li>
-                        <li className="flex items-start gap-3">
-                            <span className="bg-blue-100 dark:bg-blue-900/50 text-blue-700 dark:text-blue-300 w-6 h-6 rounded-full flex items-center justify-center shrink-0 text-xs shadow-sm">3</span>
-                            <span>今日のうれしかった出来事は・・・</span>
-                        </li>
-                    </ul>
-                    <button
-                        onClick={handleDismiss}
-                        className="mt-4 flex items-center justify-center gap-2 w-full py-2 rounded-lg bg-blue-100 hover:bg-blue-200 dark:bg-blue-900/30 dark:hover:bg-blue-900/50 text-blue-700 dark:text-blue-300 text-sm font-medium transition-colors"
-                    >
-                        <FaCheck className="text-xs" /> Done!
-                    </button>
+            <div className="relative p-5 md:p-6 flex flex-col h-full bg-[#fcfbfa] dark:bg-[#2b2a27] border border-[#e8e4db] dark:border-[#403e39] shadow-sm rounded-sm overflow-hidden font-serif">
+                {/* Paper Texture Overlay */}
+                <div className="absolute inset-0 opacity-[0.04] dark:opacity-[0.03] pointer-events-none mix-blend-multiply dark:mix-blend-screen" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg viewBox=\'0 0 200 200\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cfilter id=\'noiseFilter\'%3E%3CfeTurbulence type=\'fractalNoise\' baseFrequency=\'0.8\' numOctaves=\'3\' stitchTiles=\'stitch\'/%3E%3C/filter%3E%3Crect width=\'100%25\' height=\'100%25\' filter=\'url(%23noiseFilter)\'/%3E%3C/svg%3E")' }}></div>
+
+                <div className="relative z-10 flex flex-col h-full text-[#4a4540] dark:text-[#d4cfc7]">
+                    <div className="flex items-center justify-between mb-4 border-b border-[#e8e4db] dark:border-[#403e39] pb-2">
+                        <div className="flex items-center space-x-2">
+                            <FaMoon className="text-[#5b7a99] dark:text-[#8baecf] text-xl" />
+                            <h2 className="text-2xl font-bold font-['Caveat',_cursive] text-[#42525c] dark:text-[#95a8bb]">6-Minute Diary</h2>
+                        </div>
+                        <span className="text-xs tracking-widest text-[#8c8273] dark:text-[#8a8071] font-sans font-bold">EVENING</span>
+                    </div>
+
+                    <div className="flex-1 flex flex-col justify-start pt-2">
+                        <ul className="space-y-6 text-[15px] leading-relaxed">
+                            <li className="flex items-start gap-3">
+                                <span className="font-['Caveat',_cursive] text-2xl text-[#5b7a99] dark:text-[#8baecf] leading-none pt-0.5">1.</span>
+                                <span className="flex-1 border-b border-dashed border-[#d1ccc0] dark:border-[#5a554f] pb-1">今日は誰にどんな良いことをしてあげた？</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="font-['Caveat',_cursive] text-2xl text-[#5b7a99] dark:text-[#8baecf] leading-none pt-0.5">2.</span>
+                                <span className="flex-1 border-b border-dashed border-[#d1ccc0] dark:border-[#5a554f] pb-1">明日を良い日にするために、何をする？</span>
+                            </li>
+                            <li className="flex items-start gap-3">
+                                <span className="font-['Caveat',_cursive] text-2xl text-[#5b7a99] dark:text-[#8baecf] leading-none pt-0.5">3.</span>
+                                <span className="flex-1 border-b border-dashed border-[#d1ccc0] dark:border-[#5a554f] pb-1">今日のうれしかった出来事は・・・</span>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div className="mt-auto pt-6 flex justify-end">
+                        <button
+                            onClick={handleDismiss}
+                            className="group flex items-center justify-center gap-2 px-6 py-1.5 rounded-sm border-2 border-[#5b7a99] dark:border-[#8baecf] text-[#5b7a99] dark:text-[#8baecf] hover:bg-[#5b7a99] hover:text-[#fcfbfa] dark:hover:bg-[#8baecf] dark:hover:text-[#2b2a27] font-['Caveat',_cursive] text-2xl transition-all shadow-[2px_2px_0px_#d1ccc0] dark:shadow-[2px_2px_0px_#5a554f] hover:shadow-none hover:translate-x-[2px] hover:translate-y-[2px]"
+                        >
+                            Done! <FaCheck className="text-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </button>
+                    </div>
                 </div>
             </div>
         );

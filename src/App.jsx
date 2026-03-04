@@ -83,21 +83,26 @@ function App() {
       <div className="absolute inset-0 bg-black/20 pointer-events-none backdrop-blur-[2px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <header className="mb-12 flex justify-between items-start md:text-left text-center flex-col md:flex-row gap-6">
+        <header className="mb-6 flex justify-between items-start md:items-end md:text-left text-center flex-col md:flex-row gap-4">
           <div>
-            <h1 className="text-5xl font-black text-white drop-shadow-lg mb-4 leading-tight">
+            <h1 className="text-2xl md:text-3xl font-black text-white drop-shadow-md mb-2 leading-tight">
               {getGreeting()}
             </h1>
-            <p className="text-2xl font-medium text-white/90 drop-shadow-md">
-              現在、大阪は {timeString} です。良い一日を。
-            </p>
+            <div className="flex items-baseline gap-2 text-white/90 drop-shadow-md">
+              <span className="text-4xl md:text-5xl font-mono font-bold tracking-tighter">
+                {timeString}
+              </span>
+              <span className="text-sm font-medium opacity-80 uppercase tracking-widest">
+                {time.getHours() >= 12 ? 'PM' : 'AM'}
+              </span>
+            </div>
           </div>
           <button
             onClick={() => setIsSettingsOpen(true)}
-            className="p-3 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all shadow-lg hover:shadow-xl border border-white/20 group self-center md:self-start"
+            className="p-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all shadow-md hover:shadow-lg border border-white/20 group md:self-end"
             title="Settings"
           >
-            <FaCog className="text-2xl group-hover:rotate-90 transition-transform duration-300" />
+            <FaCog className="text-xl group-hover:rotate-90 transition-transform duration-300" />
           </button>
         </header>
 
