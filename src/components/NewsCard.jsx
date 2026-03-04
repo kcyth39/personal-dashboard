@@ -82,7 +82,7 @@ export default function NewsCard() {
 
     const filteredRssNews = (data.news.rss?.items || [])
         .filter(item => !readIds.has(item.id))
-        .slice(0, 20);
+        .slice(0, 5);
 
     return (
         <div className="glass-panel p-6 rounded-2xl flex flex-col h-full overflow-hidden">
