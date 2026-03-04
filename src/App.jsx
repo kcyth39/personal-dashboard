@@ -91,20 +91,13 @@ function App() {
             </h1>
           </div>
 
-          {/* Clock and Settings grouped together (Right side) */}
+          {/* Clock grouped together (Right side) */}
           <div className="flex flex-col items-end gap-2 shrink-0 pt-2">
             <div className="text-white/90 drop-shadow-md text-right">
               <span className="text-2xl md:text-3xl font-mono font-bold tracking-tighter block leading-none">
                 {timeString}
               </span>
             </div>
-            <button
-              onClick={() => setIsSettingsOpen(true)}
-              className="p-2 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all shadow-md hover:shadow-lg border border-white/20 group w-9 h-9 flex items-center justify-center"
-              title="Settings"
-            >
-              <FaCog className="text-lg group-hover:rotate-90 transition-transform duration-300" />
-            </button>
           </div>
         </header>
 
@@ -122,6 +115,17 @@ function App() {
             <CustomWeatherCard />
             <CalendarCard />
             <LinksCard />
+
+            <div className="flex justify-end mt-2">
+              <button
+                onClick={() => setIsSettingsOpen(true)}
+                className="px-4 py-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl text-white transition-all shadow-sm hover:shadow-md border border-white/20 group flex items-center gap-2 text-sm font-medium"
+                title="Settings"
+              >
+                <FaCog className="text-lg group-hover:rotate-90 transition-transform duration-300 opacity-80" />
+                Settings
+              </button>
+            </div>
           </div>
 
           {/* Gemini Chat Section (Bottom) */}
