@@ -85,9 +85,11 @@ function App() {
       <div className="relative z-10 max-w-7xl mx-auto">
         <header className="mb-6 flex justify-between items-start md:items-end md:text-left text-center flex-col md:flex-row gap-4">
           <div>
-            <h1 className="text-2xl md:text-3xl font-black text-white drop-shadow-md mb-2 leading-tight">
+            <h1 className="text-2xl md:text-3xl font-black text-white drop-shadow-md leading-tight mt-2">
               {getGreeting()}
             </h1>
+          </div>
+          <div className="flex flex-col items-center md:items-end gap-3 self-center md:self-end">
             <div className="flex items-baseline gap-2 text-white/90 drop-shadow-md">
               <span className="text-4xl md:text-5xl font-mono font-bold tracking-tighter">
                 {timeString}
@@ -96,14 +98,14 @@ function App() {
                 {time.getHours() >= 12 ? 'PM' : 'AM'}
               </span>
             </div>
+            <button
+              onClick={() => setIsSettingsOpen(true)}
+              className="p-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all shadow-md hover:shadow-lg border border-white/20 group"
+              title="Settings"
+            >
+              <FaCog className="text-xl group-hover:rotate-90 transition-transform duration-300" />
+            </button>
           </div>
-          <button
-            onClick={() => setIsSettingsOpen(true)}
-            className="p-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all shadow-md hover:shadow-lg border border-white/20 group md:self-end"
-            title="Settings"
-          >
-            <FaCog className="text-xl group-hover:rotate-90 transition-transform duration-300" />
-          </button>
         </header>
 
         {/* Main Grid Layout */}
