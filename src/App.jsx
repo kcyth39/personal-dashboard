@@ -83,24 +83,24 @@ function App() {
       <div className="absolute inset-0 bg-black/20 pointer-events-none backdrop-blur-[2px]"></div>
 
       <div className="relative z-10 max-w-7xl mx-auto">
-        <header className="mb-6 flex justify-between items-start md:items-end md:text-left text-center flex-col md:flex-row gap-4">
-          <div>
+        <header className="mb-6 grid grid-cols-1 md:grid-cols-12 gap-6 items-end">
+          {/* Greeting aligned with News/Market (col-span-8) */}
+          <div className="md:col-span-8">
             <h1 className="text-2xl md:text-3xl font-black text-white drop-shadow-md leading-tight mt-2">
               {getGreeting()}
             </h1>
           </div>
-          <div className="flex flex-col items-center md:items-end gap-3 self-center md:self-end">
+
+          {/* Clock and Settings aligned with Insights/Weather (col-span-4) */}
+          <div className="md:col-span-4 flex justify-between items-center md:items-end w-full">
             <div className="flex items-baseline gap-2 text-white/90 drop-shadow-md">
               <span className="text-4xl md:text-5xl font-mono font-bold tracking-tighter">
                 {timeString}
               </span>
-              <span className="text-sm font-medium opacity-80 uppercase tracking-widest">
-                {time.getHours() >= 12 ? 'PM' : 'AM'}
-              </span>
             </div>
             <button
               onClick={() => setIsSettingsOpen(true)}
-              className="p-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all shadow-md hover:shadow-lg border border-white/20 group"
+              className="p-2.5 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-full text-white transition-all shadow-md hover:shadow-lg border border-white/20 group ml-auto"
               title="Settings"
             >
               <FaCog className="text-xl group-hover:rotate-90 transition-transform duration-300" />
