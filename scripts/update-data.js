@@ -3,9 +3,7 @@ import path from 'path';
 import crypto from 'crypto';
 import { fileURLToPath } from 'url';
 import Parser from 'rss-parser';
-import YahooFinance from 'yahoo-finance2';
-
-const yahooFinance = new YahooFinance();
+import nodeFetch from 'node-fetch';
 
 // タイムアウト付きPromiseラッパー
 function withTimeout(promise, ms, label = 'operation') {
@@ -25,12 +23,12 @@ const DATA_PATH = path.join(DATA_DIR, 'dashboard-data.json');
 const CONFIG_PATH = path.join(DATA_DIR, 'dashboard-config.json');
 const parser = new Parser();
 
-// 天気取得関数 (Open-Meteo)
+// 天気取得関数 (Open-Meteo) — node-fetchを使用
 async function fetchWeather(lat, lon) {
     console.log(`Fetching Weather for ${lat}, ${lon}...`);
     try {
         const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current=temperature_2m,relative_humidity_2m,weather_code&daily=weather_code,temperature_2m_max,temperature_2m_min&timezone=Asia%2FTokyo`;
-        const response = await fetch(url);
+        const response = await nodeFetch(url);
         const data = await response.json();
 
         return {
@@ -115,7 +113,7 @@ async function fetchNews(rssFeeds = []) {
     }
 }
 
-// マーケットデータ取得関数
+// マーケットデータ取得関数 — Yahoo Finance v8 API を直接叩く（node-fetch使用）
 async function fetchMarket() {
     console.log('Fetching Market Data...');
     const symbols = {
@@ -125,27 +123,52 @@ async function fetchMarket() {
         usdjpy: 'USDJPY=X'
     };
 
+    const nameMap = {
+        nikkei: 'Nikkei 225',
+        sp500: 'S&P 500',
+        gold: 'Gold',
+        usdjpy: 'USD/JPY'
+    };
+
     const results = {};
     const now = new Date().toISOString();
 
     for (const [key, symbol] of Object.entries(symbols)) {
         try {
-            const quote = await withTimeout(
-                yahooFinance.quote(symbol),
+            const quoteUrl = `https://query1.finance.yahoo.com/v8/finance/chart/${encodeURIComponent(symbol)}?interval=1d&range=1d`;
+            const response = await withTimeout(
+                nodeFetch(quoteUrl, {
+                    headers: {
+                        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36'
+                    }
+                }),
                 10000,
                 `fetch ${symbol}`
             );
-            results[key] = {
-                price: quote.regularMarketPrice,
-                change: quote.regularMarketChange,
-                changePercent: quote.regularMarketChangePercent,
-                currency: quote.currency,
-                symbol: quote.symbol,
-                name: quote.shortName || symbol,
-                marketTime: quote.regularMarketTime ? new Date(quote.regularMarketTime).toISOString() : now
-            };
+            const data = await response.json();
+
+            if (data.chart?.result?.[0]) {
+                const meta = data.chart.result[0].meta;
+                const prevClose = meta.chartPreviousClose || meta.previousClose || 0;
+                const price = meta.regularMarketPrice;
+                const change = price - prevClose;
+                const changePercent = prevClose ? (change / prevClose) * 100 : 0;
+
+                results[key] = {
+                    price: price,
+                    change: change,
+                    changePercent: changePercent,
+                    currency: meta.currency,
+                    symbol: meta.symbol,
+                    name: nameMap[key] || symbol,
+                    marketTime: meta.regularMarketTime ? new Date(meta.regularMarketTime * 1000).toISOString() : now
+                };
+                console.log(`  ✅ ${symbol}: ${price}`);
+            } else {
+                console.error(`  ❌ ${symbol}: No data in response`, JSON.stringify(data).substring(0, 200));
+            }
         } catch (error) {
-            console.error(`Error fetching ${symbol}:`, error.message);
+            console.error(`  ❌ Error fetching ${symbol}:`, error.message);
         }
     }
 
@@ -191,7 +214,7 @@ async function _updateDataInner() {
     if (fs.existsSync(DATA_PATH)) {
         try {
             existingData = JSON.parse(fs.readFileSync(DATA_PATH, 'utf-8'));
-        } catch (e) {
+        } catch {
             console.error('Error reading existing data, starting fresh.');
         }
     }
