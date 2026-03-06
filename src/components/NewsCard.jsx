@@ -57,8 +57,8 @@ export default function NewsCard() {
 
     React.useEffect(() => {
         fetchData();
-        const timer = setInterval(fetchData, 5 * 60 * 1000);
-        return () => clearInterval(timer);
+        window.addEventListener('refreshData', fetchData);
+        return () => window.removeEventListener('refreshData', fetchData);
     }, []);
 
     const formatTime = (isoString) => {

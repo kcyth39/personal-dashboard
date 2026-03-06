@@ -61,7 +61,13 @@ export default function CustomWeatherCard() {
 
     React.useEffect(() => {
         fetchWeather(location.lat, location.lon);
-    }, []);
+
+        const handleRefresh = () => {
+            fetchWeather(location.lat, location.lon);
+        };
+        window.addEventListener('refreshData', handleRefresh);
+        return () => window.removeEventListener('refreshData', handleRefresh);
+    }, [location.lat, location.lon]);
 
     const getWeatherInfo = (code) => {
         if (code === 0) return { icon: <WiDaySunny className="text-amber-400" />, label: '快晴', color: 'from-orange-400/20 to-amber-400/20' };

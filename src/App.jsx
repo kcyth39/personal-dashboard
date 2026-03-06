@@ -18,6 +18,37 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
+  // データ更新のオーケストレーター: 初回読込時、タブへの復帰時(スリープ復帰時)、および5分ごとにオンデマンド更新をトリガー
+  React.useEffect(() => {
+    const handleRefresh = async () => {
+      try {
+        const res = await fetch('/api/refresh');
+        const data = await res.json();
+        if (data.status === 'updated' || data.status === 'fresh') {
+          console.log('[App] 🔄 Data refreshed:', data);
+          window.dispatchEvent(new Event('refreshData'));
+        }
+      } catch (err) {
+        console.error('[App] Failed to trigger data refresh:', err);
+      }
+    };
+
+    const onVisibilityChange = () => {
+      if (document.visibilityState === 'visible') {
+        handleRefresh();
+      }
+    };
+
+    handleRefresh();
+    document.addEventListener('visibilitychange', onVisibilityChange);
+    const refreshTimer = setInterval(handleRefresh, 5 * 60 * 1000);
+
+    return () => {
+      document.removeEventListener('visibilitychange', onVisibilityChange);
+      clearInterval(refreshTimer);
+    };
+  }, []);
+
   const hour = time.getHours();
 
   // Get Greeting based on time

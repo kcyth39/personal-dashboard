@@ -253,8 +253,7 @@ async function _updateDataInner() {
 }
 
 // 初回実行
-updateData();
-
-// 定期実行（5分ごと）
-// マーケットは毎回更新され、ニュースはスクリプト内部のロジックで30分ごとに更新される
-setInterval(updateData, 5 * 60 * 1000);
+updateData().then(() => {
+    // 成功・失敗にかかわらずプロセスを終了
+    process.exit(0);
+});
