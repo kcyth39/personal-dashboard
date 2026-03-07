@@ -1,0 +1,15 @@
+{
+    "tasks": {
+        "t1": {
+            "id": "t1",
+            "content": "Test Task"
+        }
+    },
+    "columns": {
+        "today": {
+            "taskIds": [
+                "t1"
+            ]
+        }
+    }
+}
