@@ -1,15 +1,145 @@
 {
     "tasks": {
-        "t1": {
-            "id": "t1",
-            "content": "Test Task"
+        "task-1772863307105": {
+            "id": "task-1772863307105",
+            "title": "はるのすけピアノ",
+            "content": "This is a description",
+            "deadline": "2026-03-07",
+            "importance": "高",
+            "urgency": "中"
+        },
+        "task-1772863390233": {
+            "id": "task-1772863390233",
+            "title": "Test Task 2",
+            "content": "OpenParea task",
+            "deadline": "",
+            "importance": "中",
+            "urgency": "中"
+        },
+        "task-1772869836039": {
+            "id": "task-1772869836039",
+            "title": "Book venue",
+            "content": "",
+            "deadline": "",
+            "category": "openparea",
+            "projectId": "proj-1772869613001"
+        },
+        "task-1772869996921": {
+            "id": "task-1772869996921",
+            "title": "振り返り記入",
+            "content": "",
+            "deadline": "2026-03-09",
+            "category": "morisawa",
+            "projectId": ""
+        },
+        "task-1772870204926": {
+            "id": "task-1772870204926",
+            "title": "洗濯",
+            "content": "洗濯する",
+            "deadline": "2026-03-09",
+            "category": "family",
+            "projectId": ""
+        },
+        "task-1772871124570": {
+            "id": "task-1772871124570",
+            "title": "Today Task",
+            "content": "",
+            "deadline": "2026-03-07",
+            "category": "self",
+            "projectId": ""
         }
     },
     "columns": {
-        "today": {
+        "self": {
+            "id": "self",
+            "title": "自分",
+            "theme": "var(--cat-self)",
+            "taskIds": []
+        },
+        "family": {
+            "id": "family",
+            "title": "家族",
+            "theme": "var(--cat-family)",
             "taskIds": [
-                "t1"
+                "task-1772863307105"
             ]
+        },
+        "openparea": {
+            "id": "openparea",
+            "title": "OpenParea",
+            "theme": "var(--cat-openparea)",
+            "taskIds": [
+                "task-1772863390233"
+            ]
+        },
+        "morisawa": {
+            "id": "morisawa",
+            "title": "モリサワ",
+            "theme": "var(--cat-morisawa)",
+            "taskIds": []
+        },
+        "citpc": {
+            "id": "citpc",
+            "title": "CITPC",
+            "theme": "var(--cat-citpc)",
+            "taskIds": []
+        },
+        "today": {
+            "id": "today",
+            "title": "Today",
+            "theme": "var(--cat-today)",
+            "taskIds": [
+                "task-1772871124570",
+                "task-1772870204926",
+                "task-1772869996921",
+                "task-1772869836039"
+            ]
+        },
+        "upcoming": {
+            "id": "upcoming",
+            "title": "Upcoming",
+            "theme": "var(--cat-upcoming)",
+            "taskIds": []
+        },
+        "backlog": {
+            "id": "backlog",
+            "title": "Backlog",
+            "theme": "var(--cat-backlog)",
+            "taskIds": []
+        },
+        "someday": {
+            "id": "someday",
+            "title": "Someday",
+            "theme": "var(--cat-someday)",
+            "taskIds": []
         }
-    }
+    },
+    "columnOrder": [
+        "today",
+        "upcoming",
+        "backlog",
+        "someday"
+    ],
+    "projects": [
+        {
+            "id": "proj-demo1",
+            "name": "Personal Website",
+            "categoryId": "self"
+        },
+        {
+            "id": "proj-demo2",
+            "name": "Household Duties",
+            "categoryId": "self"
+        },
+        {
+            "id": "proj-1772867440206",
+            "name": "New Website Revamp",
+            "categoryId": "self"
+        },
+        {
+            "id": "proj-1772869613001",
+            "name": "Team Offsite",
+            "categoryId": "openparea"
+        }
+    ]
 }

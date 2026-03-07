@@ -59,7 +59,7 @@ export default function CalendarCard() {
                                     <div className="flex items-start gap-2">
                                         <div className="mt-1 w-1.5 h-1.5 rounded-full bg-blue-500 flex-shrink-0"></div>
                                         <span className="text-sm font-medium text-gray-800 dark:text-gray-200 line-clamp-2 leading-tight group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
-                                            {task.content}
+                                            {task.title || task.content}
                                         </span>
                                     </div>
                                 </a>
